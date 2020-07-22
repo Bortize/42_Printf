@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/21 11:14:51 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 12:53:41 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/07/22 13:06:58 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct	s_struct
 	int		len;
 	int		flag_minus;
 	int		flag_zero;
-	int		flag_aux;
+	int		aux;
 }				t_struct;
 
 // ↓↓↓ FUNCTIONS PROTOIPES ↓↓↓
