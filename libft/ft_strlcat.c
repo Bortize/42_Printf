@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:47 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:12:30 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/11/17 16:14:06 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/01/03 19:05:16 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+size_t			ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	t_struct	*flags;
+	size_t		d;
+	size_t		s;
+	size_t		dst_len;
+	size_t		src_len;
 
-	if (!(flags = (t_struct *)malloc(sizeof(t_struct))))
-		return (0);
-	start_flags(flags);
-	if (format == NULL)
-		return (-1);
-	va_start(flags->ap, format);
-	if (ft_strchr(format, '%'))
-		check_flags(format, flags);
-	else
+	d = ft_strlen(dst);
+	s = 0;
+	dst_len = d;
+	src_len = ft_strlen(src);
+	if (dstsize < dst_len)
+		return (src_len + dstsize);
+	while (src[s] && (d + 1) < dstsize)
 	{
-		ft_putstr_fd((char *)format, 1);
-		flags->len = ft_strlen(format);
+		dst[d++] = src[s++];
 	}
-	va_end(flags->ap);
-	return (flags->len);
+	dst[d] = '\0';
+	return (dst_len + src_len);
 }

@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:51 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:36:26 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/11/18 02:19:08 by borjagomez-       #+#    #+#             */
+/*   Updated: 2019/11/28 16:49:13 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft/libft.h"
-
-typedef struct	s_struct
+int	ft_isdigit(int c)
 {
-	va_list	ap;
-	int		len;
-}				t_struct;
-
-// ↓↓↓ FUNCTIONS PROTOIPES ↓↓↓
-
-#endif
+	if (c > 47 && c < 58)
+		return (1);
+	return (0);
+}

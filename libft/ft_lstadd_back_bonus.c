@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:47 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:12:30 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/12/27 12:09:34 by bgomez-r          #+#    #+#             */
+/*   Updated: 2019/12/27 14:37:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_struct	*flags;
+	t_list *alst_aux;
 
-	if (!(flags = (t_struct *)malloc(sizeof(t_struct))))
-		return (0);
-	start_flags(flags);
-	if (format == NULL)
-		return (-1);
-	va_start(flags->ap, format);
-	if (ft_strchr(format, '%'))
-		check_flags(format, flags);
+	alst_aux = ft_lstlast(*alst);
+	if (*alst == NULL)
+		*alst = new;
 	else
-	{
-		ft_putstr_fd((char *)format, 1);
-		flags->len = ft_strlen(format);
-	}
-	va_end(flags->ap);
-	return (flags->len);
+		alst_aux->next = new;
 }

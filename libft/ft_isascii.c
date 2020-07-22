@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:51 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:36:26 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/11/05 01:37:04 by bgomez-r          #+#    #+#             */
+/*   Updated: 2019/12/30 13:05:46 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft/libft.h"
-
-typedef struct	s_struct
+int	ft_isascii(int c)
 {
-	va_list	ap;
-	int		len;
-}				t_struct;
-
-// ↓↓↓ FUNCTIONS PROTOIPES ↓↓↓
-
-#endif
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
+}

@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:47 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:12:30 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/11/17 14:28:21 by bgomez-r          #+#    #+#             */
+/*   Updated: 2019/11/17 16:20:32 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	t_struct	*flags;
+	unsigned int i;
+	unsigned int src_len;
 
-	if (!(flags = (t_struct *)malloc(sizeof(t_struct))))
+	if (dst == 0 || src == 0)
 		return (0);
-	start_flags(flags);
-	if (format == NULL)
-		return (-1);
-	va_start(flags->ap, format);
-	if (ft_strchr(format, '%'))
-		check_flags(format, flags);
-	else
+	src_len = ft_strlen(src);
+	if (dstsize == 0)
+		return (src_len);
+	i = 0;
+	while (i < dstsize - 1 && src[i])
 	{
-		ft_putstr_fd((char *)format, 1);
-		flags->len = ft_strlen(format);
+		dst[i] = src[i];
+		i++;
 	}
-	va_end(flags->ap);
-	return (flags->len);
+	dst[i] = '\0';
+	return (src_len);
 }

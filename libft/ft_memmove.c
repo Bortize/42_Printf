@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:47 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:12:30 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/11/04 17:54:53 by bgomez-r          #+#    #+#             */
+/*   Updated: 2019/11/20 18:57:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	t_struct	*flags;
+	size_t		i;
+	char		*dst1;
+	const char	*src1;
 
-	if (!(flags = (t_struct *)malloc(sizeof(t_struct))))
-		return (0);
-	start_flags(flags);
-	if (format == NULL)
-		return (-1);
-	va_start(flags->ap, format);
-	if (ft_strchr(format, '%'))
-		check_flags(format, flags);
+	if (len == 0 || dst == src)
+		return (dst);
+	dst1 = dst;
+	src1 = src;
+	i = 0;
+	if (src > dst)
+		while (i < len)
+		{
+			dst1[i] = src1[i];
+			i++;
+		}
 	else
-	{
-		ft_putstr_fd((char *)format, 1);
-		flags->len = ft_strlen(format);
-	}
-	va_end(flags->ap);
-	return (flags->len);
+		while (len > 0)
+		{
+			len--;
+			dst1[len] = src1[len];
+		}
+	return (dst1);
 }

@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:47 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:12:30 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/12/18 14:07:30 by bgomez-r          #+#    #+#             */
+/*   Updated: 2019/12/20 15:06:12 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+void		ft_putnbr_fd(int n, int fd)
 {
-	t_struct	*flags;
-
-	if (!(flags = (t_struct *)malloc(sizeof(t_struct))))
-		return (0);
-	start_flags(flags);
-	if (format == NULL)
-		return (-1);
-	va_start(flags->ap, format);
-	if (ft_strchr(format, '%'))
-		check_flags(format, flags);
-	else
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
 	{
-		ft_putstr_fd((char *)format, 1);
-		flags->len = ft_strlen(format);
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
 	}
-	va_end(flags->ap);
-	return (flags->len);
+	else if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }

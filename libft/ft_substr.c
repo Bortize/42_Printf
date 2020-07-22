@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:47 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:12:30 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/11/05 01:39:08 by bgomez-r          #+#    #+#             */
+/*   Updated: 2019/11/28 18:31:48 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	t_struct	*flags;
+	char	*new;
+	size_t	i;
 
-	if (!(flags = (t_struct *)malloc(sizeof(t_struct))))
-		return (0);
-	start_flags(flags);
-	if (format == NULL)
-		return (-1);
-	va_start(flags->ap, format);
-	if (ft_strchr(format, '%'))
-		check_flags(format, flags);
-	else
+	if (!s)
+		return (NULL);
+	new = malloc(sizeof(char) * (len + 1));
+	if (new)
 	{
-		ft_putstr_fd((char *)format, 1);
-		flags->len = ft_strlen(format);
+		i = 0;
+		if (ft_strlen(s) > start)
+			while (i < len)
+			{
+				new[i] = s[start + i];
+				i++;
+			}
+		new[i] = '\0';
+		return (new);
 	}
-	va_end(flags->ap);
-	return (flags->len);
+	return (NULL);
 }

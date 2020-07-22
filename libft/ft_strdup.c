@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:51 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:36:26 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/12/07 02:00:55 by borjagrd          #+#    #+#             */
+/*   Updated: 2019/12/18 14:04:14 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-typedef struct	s_struct
+char		*ft_strdup(const char *s1)
 {
-	va_list	ap;
-	int		len;
-}				t_struct;
+	char	*s1_cpy;
+	size_t	len_s1;
 
-// ↓↓↓ FUNCTIONS PROTOIPES ↓↓↓
-
-#endif
+	len_s1 = ft_strlen(s1);
+	s1_cpy = (char *)malloc(sizeof(char) * (len_s1 + 1));
+	if (s1_cpy == 0)
+		return (NULL);
+	return (ft_strcpy(s1_cpy, s1));
+}

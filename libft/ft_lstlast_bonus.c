@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:51 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:36:26 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/12/24 12:12:40 by bgomez-r          #+#    #+#             */
+/*   Updated: 2019/12/27 13:14:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-typedef struct	s_struct
+t_list	*ft_lstlast(t_list *lst)
 {
-	va_list	ap;
-	int		len;
-}				t_struct;
-
-// ↓↓↓ FUNCTIONS PROTOIPES ↓↓↓
-
-#endif
+	while (lst != NULL && lst->next != NULL)
+		lst = lst->next;
+	return (lst);
+}

@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:51 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:36:26 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/11/05 01:38:49 by bgomez-r          #+#    #+#             */
+/*   Updated: 2019/11/28 20:05:12 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-typedef struct	s_struct
+void	ft_putendl_fd(char *s, int fd)
 {
-	va_list	ap;
-	int		len;
-}				t_struct;
-
-// ↓↓↓ FUNCTIONS PROTOIPES ↓↓↓
-
-#endif
+	ft_putstr_fd(ft_strjoin(s, "\n"), fd);
+}

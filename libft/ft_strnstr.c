@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/21 11:14:47 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 09:12:30 by bgomez-r         ###   ########.fr       */
+/*   Created: 2019/11/19 17:21:09 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/01/01 19:36:13 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int		ft_printf(const char *format, ...)
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	t_struct	*flags;
+	size_t	len_needle;
 
-	if (!(flags = (t_struct *)malloc(sizeof(t_struct))))
-		return (0);
-	start_flags(flags);
-	if (format == NULL)
-		return (-1);
-	va_start(flags->ap, format);
-	if (ft_strchr(format, '%'))
-		check_flags(format, flags);
-	else
+	len_needle = ft_strlen(needle);
+	if (*needle == '\0')
+		return ((char *)haystack);
+	while (*haystack != '\0' && len_needle <= len)
 	{
-		ft_putstr_fd((char *)format, 1);
-		flags->len = ft_strlen(format);
+		if (ft_memcmp(haystack, needle, len_needle) == 0)
+			return (char *)haystack;
+		haystack++;
+		len--;
 	}
-	va_end(flags->ap);
-	return (flags->len);
+	return (NULL);
 }
