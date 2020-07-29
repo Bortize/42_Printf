@@ -31,7 +31,7 @@ void	flag_width(const char *format, t_struct *flags)
 			flags->width = 0;
 			while (flags->aux = ft_isdigit(format[flags->i]))
 			{
-				flags->while = ft_atoi(format[flags->i]);
+				flags->width = ft_atoi(format[flags->i]);
 				flags->i++;
 			}
 		}
