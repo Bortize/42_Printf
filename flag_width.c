@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 10:07:40 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/29 11:50:40 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/07/29 13:24:29 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	flag_width(const char *format, t_struct *flags)
 			flags->width = 0;
 			while (flags->aux = ft_isdigit(format[flags->i]))
 			{
-				flags->while = ft_atoi(format[flags->i]);
+				flags->width = ft_atoi(format[flags->i]);
 				flags->i++;
 			}
 		}
