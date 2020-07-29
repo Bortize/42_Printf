@@ -1,24 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_flags.c                                      :+:      :+:    :+:   */
+/*   flag_precision.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/22 10:16:56 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/29 11:37:29 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/07/29 10:08:14 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/07/29 10:12:52 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	start_flags(t_struct *flags)
-{
-	flags->i = 0;
-	flags->len = 0;
-	flags->flag_minus = 0;
-	flags->flag_zero = 0;
-	flags->aux = 0;
-	flags->flag_aux = 0;
-	flags->flag_width = 0;
-}
