@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_flags.c                                      :+:      :+:    :+:   */
+/*   flag_precision.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/22 09:07:16 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 12:05:23 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/07/29 10:08:14 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/07/29 12:17:43 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		check_flags(const char *format, t_struct *flags)
+flags->precision = 0;
+flags->flag_precision = 0;
+flags->aux = 0;
+while (format[flags->i] == '*' || format[flags->i] == '.')
 {
-	while (format[flags->i])
+	if (format[flags->i] == '*')
 	{
-		if (format[flags->i] == '%')
+		flags->aux = va_arg(flags->ap, int);
+		flags->precision = flags->aux > 0 ? flags->aux : flag->precison;
+		flags->flag_precison = 1;
+		flags->i++;
+	}
+	else
+	{
+		flags->i++
+		while (flags->aux = ft_isdigit(format[flags->i]))
 		{
-			flags->i++;
-			if (ft_strcht("*.-0123456789", format[flags->i]))
-				flags_trigger(format, flags);
-			if (ft_strchr("scupidxX%", format[flags->i]))
-				check_type(format, flags);
+			
 		}
-		else
-		{
-			write(1, &format[flags->i], 1);
-			flags->len++;
-		}
-		if (format[flags->i] == '\0')
-			flags->i++;
 	}
 }
