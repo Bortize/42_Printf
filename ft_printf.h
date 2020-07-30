@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/21 11:14:51 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/29 10:14:28 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/07/30 11:11:10 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ int		check_flags(const char *format, t_struct *flags);
 void	flags_trigger(const char *format, t_struct *flags);
 void	flag_minus_zero(const char *format, t_struct *flags);
 void	flag_width(const char *format, t_struct *flags);
+void	flag_ghostplus (const char *format, t_struct *flags);
 #endif
