@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   initialize_flags.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 16:18:28 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/08/22 00:51:33 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/08/24 09:07:48 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 
-void    initialize_flags(t_struct *flags)
+void	initialize_flags(t_struct *flags)
 {
-    flags->len = 0;
+	flags->len = 0;
 }

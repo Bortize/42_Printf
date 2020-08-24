@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/08/23 01:28:26 by borjagrd         ###   ########.fr        #
+#    Updated: 2020/08/24 09:09:25 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,17 +14,17 @@ NAME		=	libftprintf.a
 
 LIBFT		=	libft.a
 
-SRCS      	= ft_printf.c \
-			initialize_flags.c \
-            main.c
+SRCS		=	ft_printf.c \
+				initialize_flags.c \
+				main.c
 #Compilador
-CC        	= @gcc
+CC			= @gcc
 #Indica los argumentos que se van a pasar al ßcompilador
-CFLAGS    	= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror -g
 #Variable que contiene todos los ficheros .o evitando que tenga que listarlos todo el tiempo. Ademas en la misma variable los pasa de .c a .o
-OBJS      	= $(SRCS:.c=.o)
+OBJS		= $(SRCS:.c=.o)
 # indica una lista separada por comas de directorios donde buscar los archivos de cabecera
-INCLUDE   	= ./libft
+INCLUDE		= ./libft
 
 AR			= ar rcs
 
@@ -33,7 +33,7 @@ RM			= rm -rf
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-all:       $(NAME)
+all:		$(NAME)
 
 $(NAME):	$(OBJS) $(INCLUDE)
 				$(CC) $(CFLAGS) -c $(SRCS)
@@ -54,6 +54,6 @@ fclean:     clean
 				make -C $(INCLUDE) fclean
 				$(RM) a.out a.out.dSYM
 
-re:         fclean all
+re:			fclean all
 
-.PHONY:     all clean fclean re
+.PHONY:		all clean fclean re
