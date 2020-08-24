@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/08/24 09:09:25 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/08/24 10:33:45 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ LIBFT		=	libft.a
 
 SRCS		=	ft_printf.c \
 				initialize_flags.c \
+				check_flags.c \
 				main.c
 #Compilador
 CC			= @gcc
