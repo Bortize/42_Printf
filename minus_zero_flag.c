@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_flags.c                                      :+:      :+:    :+:   */
+/*   minus_zero_flag.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/24 09:19:07 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/24 11:29:55 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/08/24 11:29:12 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/08/24 12:24:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	check_flags(const char *format, t_struct *flags)
+void	minus_zero_flag(const char *format, t_struct *flags)
 {
-	while (format[flags->i])
+	flags->flag_minus = 0;
+	flags->flag_zero = 0;
+	while (format[flags->i] == '0' || format[flags->i] == '-')
 	{
-		if (ft_strchr("%", format[flags->i]))//podria poner format[flags->i] == '%'
-		{
-			flags->i++;
-			if (format[flags->i] == '%')
-				flags_trigger (format, flags);
-			if (ft_strchr("idscupxX%", format[flags->i]))
-				check_type (format, flags);
-		}
-		else
-		{
-			write (1, &format[flags->i], 1);
-			flags->len++;
-		}
-		if (format[flags->i] != '\0')
+		if (format[flags->i] == '0')
+			flags->flag_zero == 1;
+		if (format[flags->i] == '-')
+			flags->flag_minus == 1;
+		if (flags->flag_minus == 1)
+			flags->flag_zero == 0;
 		flags->i++;
 	}
 }

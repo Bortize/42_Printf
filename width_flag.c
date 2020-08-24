@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_flags.c                                      :+:      :+:    :+:   */
+/*   width_flag.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/24 09:19:07 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/24 11:29:55 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/08/24 12:26:30 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/08/24 12:42:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	check_flags(const char *format, t_struct *flags)
+void	width_flag(const char *format, t_struct *flags)
 {
-	while (format[flags->i])
+	flags->aux = 0;
+	flags->width = 0;
+	flags->flag_width = 0;
+	if (format[flags->i] == '*' || ft_isdigit(format[flags->i]))
 	{
-		if (ft_strchr("%", format[flags->i]))//podria poner format[flags->i] == '%'
+		if (format[flags->i] == '*')
 		{
-			flags->i++;
-			if (format[flags->i] == '%')
-				flags_trigger (format, flags);
-			if (ft_strchr("idscupxX%", format[flags->i]))
-				check_type (format, flags);
+			flags->aux = va_arg(flags->ap, int);
 		}
-		else
-		{
-			write (1, &format[flags->i], 1);
-			flags->len++;
-		}
-		if (format[flags->i] != '\0')
-		flags->i++;
+		else (ft_isdigit(format[flags->i]))
 	}
 }
