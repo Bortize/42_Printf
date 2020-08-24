@@ -6,15 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:34:12 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/08/24 09:14:38 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/08/24 09:18:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
 
 int	ft_printf(const char *format, ...)
 {
@@ -27,7 +23,7 @@ int	ft_printf(const char *format, ...)
 		return (-1);
 	va_start(flags->ap, format);
 	if (ft_strchr(format, '%'))
-		return (0);
+		check_flags(format, flags);
 	else
 	{
 		ft_putstr_fd((char *)format, 1);
