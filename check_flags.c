@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 09:19:07 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/24 11:29:55 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/08/25 09:09:21 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	check_flags(const char *format, t_struct *flags)
 		{
 			flags->i++;
 			if (format[flags->i] == '%')
-				flags_trigger (format, flags);
+				flags_trigger(format, flags);
 			if (ft_strchr("idscupxX%", format[flags->i]))
-				check_type (format, flags);
+				check_type(format, flags);
 		}
 		else
 		{

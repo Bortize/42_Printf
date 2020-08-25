@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 12:26:30 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/24 12:42:36 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/08/25 10:14:26 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,19 @@ void	width_flag(const char *format, t_struct *flags)
 		if (format[flags->i] == '*')
 		{
 			flags->aux = va_arg(flags->ap, int);
+			flags->width = flags->aux < 0 ? -(flags->aux) : flags->aux;
+			flags->flag_aux = 1;
+			flags->i++;
 		}
-		else (ft_isdigit(format[flags->i]))
+		else
+		{
+			flags->flag_width = 1;
+			flags->width = 0;
+			while (ft_isdigit(format[flags->i]))
+			{
+				flags->width = flags->width * 10 + format[flags->i] - 48;
+				flags->i++;
+			}
+		}
 	}
 }
