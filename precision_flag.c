@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   precision_flag.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 10:18:13 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/25 12:48:13 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/01 16:04:30 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	precision_flag(const char *format, t_struct *flags)
 {

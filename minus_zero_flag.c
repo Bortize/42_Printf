@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   minus_zero_flag.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 11:29:12 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/24 12:24:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/01 16:03:54 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	minus_zero_flag(const char *format, t_struct *flags)
 {

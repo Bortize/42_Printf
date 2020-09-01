@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_flags.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 09:19:07 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/25 09:09:21 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/01 16:04:05 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	check_flags(const char *format, t_struct *flags)
 {
@@ -26,10 +26,10 @@ void	check_flags(const char *format, t_struct *flags)
 		}
 		else
 		{
-			write (1, &format[flags->i], 1);
+			write(1, &format[flags->i], 1);
 			flags->len++;
 		}
 		if (format[flags->i] != '\0')
-		flags->i++;
+			flags->i++;
 	}
 }
