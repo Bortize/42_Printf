@@ -6,7 +6,7 @@
 /*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 19:30:51 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/01 22:25:55 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/09/01 22:31:16 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void    flag_width_integer(t_struct *flags, long int integer)
                 print_integer_width(flags);
         }
         else
-            while (flags->j < (flasg->widht - flags->count))
+            while (flags->j < (flags->width - flags->count))
             {
                 write(1, " ", 1);
                 flags->len++;
