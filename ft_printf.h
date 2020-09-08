@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/08 12:39:40 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/08 17:59:42 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdarg.h>
+
 typedef struct	s_struct
 {
 	va_list ap;
@@ -49,8 +50,7 @@ void	width_flag(const char *format, t_struct	*flags);
 void	precision_flag(const char *format, t_struct *flags);
 void	flag_width_integer(t_struct *flags, long int integer);
 void	print_integer_width(t_struct *flags);
-int		type_integer(t_struct *flags);
+void	type_integer(t_struct *flags);
 void	int_counter(t_struct *flags, int integer);
-int		main(void);
 
 #endif

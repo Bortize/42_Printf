@@ -1,0 +1,1 @@
+La finalidad de esta función es comprobar si el valor de la precisión es mayor que el valor de la longitud del entero, porque en ese caso tendremos que rellenar los espacios que faltan de ceros.

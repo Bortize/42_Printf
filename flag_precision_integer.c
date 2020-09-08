@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   flag_precision_integer.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 16:27:10 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/08 17:59:19 by borjagrd         ###   ########.fr       */
+/*   Created: 2020/09/08 18:04:07 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/09/08 21:44:03 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
-#include    <unistd.h>
-#include    <stdio.h>
-#include    <stdlib.h>
-#include    <stdarg.h>
+#include "ft_printf.h"
 
-int	main()
+void    flag_precision_integer(t_struct *flags)
 {
-	ft_printf("El Numero es ese \n");
-	ft_printf("El Numero es ese %i \n", 34);
-	return (0);
+    int num_len;
+
+    num_len = flags->count;
+    flags->j = 0;
+    if (flags->width > num_len)
+    {
+        write(1, "0", 1);
+        flags->len++;
+        flags->j++;
+    }
 }
