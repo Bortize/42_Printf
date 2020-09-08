@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minus_zero_flag.c                                  :+:      :+:    :+:   */
+/*   print_integer_width.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/24 11:29:12 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/08 11:34:00 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/08 12:06:03 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/09/08 12:09:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	minus_zero_flag(const char *format, t_struct *flags)
+void	print_integer_width(t_struct *flags)
 {
-	flags->flag_minus = 0;
-	flags->flag_zero = 0;
-	while (format[flags->i] == '0' || format[flags->i] == '-')
+	int total;
+
+	flags->j = 0;
+	total = flags->width - flags->aux;
+	while (flags->j < total)
 	{
-		if (format[flags->i] == '0')
-			flags->flag_zero = 1;
-		if (format[flags->i] == '-')
-			flags->flag_minus = 1;
-		if (flags->flag_minus == 1)
-			flags->flag_zero = 0;
-		flags->i++;
+		write(1, " ", 1);
+		flags->len++;
+		flags->j++;
 	}
 }

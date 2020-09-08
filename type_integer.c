@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   type_integer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 09:14:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/01 19:29:24 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/09/08 12:24:16 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	type_integer(const char *format, t_struct *flags)
+int	type_integer(t_struct *flags)
 {
 	int	integer;
 
@@ -26,4 +26,9 @@ int	type_integer(const char *format, t_struct *flags)
 		flags->precision = 0;
 	if (flags->flag_width)
 		flag_width_integer(flags, integer);
+	if (integer < 0)
+		integer = print_negative(flags, integer);
+	if (flags->flag_zero)
+		flag_zero_integer(flags);
+	return (0);
 }
