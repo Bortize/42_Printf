@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_integer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 09:14:02 by bgomez-r          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2020/09/08 12:43:41 by bgomez-r         ###   ########.fr       */
-=======
-/*   Updated: 2020/09/08 19:20:35 by borjagrd         ###   ########.fr       */
->>>>>>> 49240591b421322e1de5b9e7d800c59d9503fb00
+/*   Created: 2020/09/09 08:52:29 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/09/09 09:37:05 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +31,8 @@ void	type_integer(t_struct *flags)
 	if (flags->flag_zero)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)
-		flag_precision_integer(flags, integer);
-<<<<<<< HEAD
-	return (0);
-=======
->>>>>>> 49240591b421322e1de5b9e7d800c59d9503fb00
+		flag_precision_integer(flags);
+	print_number(flags, integer);
+	if (flags->flag_minus)
+		flag_minus_integer(flags, integer);
 }
