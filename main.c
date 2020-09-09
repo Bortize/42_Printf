@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 16:27:10 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/08/24 09:07:42 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/08 17:59:19 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include    <stdlib.h>
 #include    <stdarg.h>
 
-int	main(void)
+int	main()
 {
 	ft_printf("El Numero es ese \n");
 	ft_printf("El Numero es ese %i \n", 34);

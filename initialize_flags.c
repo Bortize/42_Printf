@@ -6,7 +6,7 @@
 /*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 16:18:28 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/01 19:26:06 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/09/08 19:21:41 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ void	initialize_flags(t_struct *flags)
 	flags->aux = 0;
 	flags->width = 0;
 	flags->flag_width = 0;
+	flags->count = 0;
 }
