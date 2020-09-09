@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 08:52:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/09 09:37:05 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/09 10:38:56 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,8 @@ void	type_integer(t_struct *flags)
 	print_number(flags, integer);
 	if (flags->flag_minus)
 		flag_minus_integer(flags, integer);
+	print_integer(flags, integer);
+	if (flags->flag_minus)
+		flag_minus_integer(flags, integer);
 }
+
