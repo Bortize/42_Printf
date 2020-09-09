@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 09:14:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/08 12:24:16 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/08 12:43:41 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ int	type_integer(t_struct *flags)
 		integer = print_negative(flags, integer);
 	if (flags->flag_zero)
 		flag_zero_integer(flags);
+	if (flags->flag_precision)
+		flag_precision_integer(flags, integer);
 	return (0);
 }
