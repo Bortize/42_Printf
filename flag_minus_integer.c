@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 11:03:05 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/09 11:03:52 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/09 23:39:07 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/09/10 10:26:56 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include    "ft_printf.h"
 
-void	flag_minus_integer(t_struct *flags, int integer)
-{
+void    flag_minus_integer(t_struct *flags, int integer)
+{// En esta primera parte tengo que
 
 }

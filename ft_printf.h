@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/09 11:04:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/10 10:27:03 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ void	flag_width_integer(t_struct *flags, long int integer);
 void	print_integer_width(t_struct *flags);
 void	type_integer(t_struct *flags);
 void	int_counter(t_struct *flags, int integer);
-void	flag_precision_integer(t_struct *flags);
-void	print_integer(t_struct *flags, int integer);
-void	flag_minus_integer(t_struct *flags, int integer);
+void    flag_precision_integer(t_struct *flags);
+void    number_print(t_struct *flags, int integer);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/09/09 11:04:05 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/09/10 10:27:11 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,7 @@ SRCS		=	ft_printf.c \
 				int_counter.c \
 				type_integer.c \
 				flag_precision_integer.c \
-				print_integer.c \
-				flag_minus_integer.c \
+				number_print.c \
 				main.c
 #Compilador
 CC			= @gcc

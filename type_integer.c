@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 08:52:29 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/09 10:38:56 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/08/25 09:14:02 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/09/10 10:27:14 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ void	type_integer(t_struct *flags)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)
 		flag_precision_integer(flags);
-	print_number(flags, integer);
-	if (flags->flag_minus)
-		flag_minus_integer(flags, integer);
-	print_integer(flags, integer);
+	number_print(flags, integer);
 	if (flags->flag_minus)
 		flag_minus_integer(flags, integer);
 }
