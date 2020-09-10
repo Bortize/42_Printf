@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 09:14:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/10 10:27:14 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/10 12:12:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include	"ft_printf.h"
 
 void	type_integer(t_struct *flags)
 {
@@ -33,7 +33,5 @@ void	type_integer(t_struct *flags)
 	if (flags->flag_precision)
 		flag_precision_integer(flags);
 	number_print(flags, integer);
-	if (flags->flag_minus)
-		flag_minus_integer(flags, integer);
 }
 
