@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_type.c                                       :+:      :+:    :+:   */
+/*   flag_width_string.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 08:53:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/12 14:19:58 by borjagrd         ###   ########.fr       */
+/*   Created: 2020/09/12 15:58:03 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/09/12 16:22:41 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include    "ft_printf.h"
 
-void	check_type(const char *format, t_struct *flags)
+void    flag_width_string(t_struct *flags, char *format)
 {
-	if (format[flags->i] == 'i' || format[flags->i] == 'd')
-		type_integer(flags);
-	if (format[flags->i] == 's')
-		type_string(flags);
+
 }

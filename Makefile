@@ -6,7 +6,7 @@
 #    By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/09/09 23:30:42 by borjagrd         ###   ########.fr        #
+#    Updated: 2020/09/12 15:57:35 by borjagrd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,9 @@ SRCS		=	ft_printf.c \
 				type_integer.c \
 				flag_precision_integer.c \
 				number_print.c \
+				flag_minus_integer.c \
+				type_string.c \
+				flag_width_string.c \
 				main.c
 #Compilador
 CC			= @gcc
