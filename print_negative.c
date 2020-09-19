@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialize_flags.c                                 :+:      :+:    :+:   */
+/*   print_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 16:18:28 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/08 19:21:41 by borjagrd         ###   ########.fr       */
+/*   Created: 2020/09/08 12:16:10 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/09/08 12:22:41 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	initialize_flags(t_struct *flags)
+int	print_negative(t_struct *flags, long int integer)
 {
-	flags->j = 0;
-	flags->len = 0;
-	flags->flag_minus = 0;
-	flags->flag_zero = 0;
-	flags->aux = 0;
-	flags->width = 0;
-	flags->flag_width = 0;
-	flags->count = 0;
+	if (integer == -2147483648)
+		return (integer);
+	write (1, "-", 1);
+	flags->len++;
+	integer *= -1;
+	return (integer);
 }

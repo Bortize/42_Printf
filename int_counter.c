@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialize_flags.c                                 :+:      :+:    :+:   */
+/*   int_counter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 16:18:28 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/08 19:21:41 by borjagrd         ###   ########.fr       */
+/*   Created: 2020/08/25 09:25:57 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/08/25 09:37:13 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include	"ft_printf.h"
 
-void	initialize_flags(t_struct *flags)
+void	int_counter(t_struct *flags, int integer)
 {
-	flags->j = 0;
-	flags->len = 0;
-	flags->flag_minus = 0;
-	flags->flag_zero = 0;
-	flags->aux = 0;
-	flags->width = 0;
-	flags->flag_width = 0;
-	flags->count = 0;
+	char	*str;
+
+	flags->flag_integer_negative = 0;
+	if (integer < 0)
+		flags->flag_integer_negative = 1;
+	str = ft_itoa(integer);
+	flags->count = ft_strlen(str);
 }

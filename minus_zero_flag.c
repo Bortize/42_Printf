@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialize_flags.c                                 :+:      :+:    :+:   */
+/*   minus_zero_flag.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 16:18:28 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/08 19:21:41 by borjagrd         ###   ########.fr       */
+/*   Created: 2020/08/24 11:29:12 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/09/08 11:34:00 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	initialize_flags(t_struct *flags)
+void	minus_zero_flag(const char *format, t_struct *flags)
 {
-	flags->j = 0;
-	flags->len = 0;
 	flags->flag_minus = 0;
 	flags->flag_zero = 0;
-	flags->aux = 0;
-	flags->width = 0;
-	flags->flag_width = 0;
-	flags->count = 0;
+	while (format[flags->i] == '0' || format[flags->i] == '-')
+	{
+		if (format[flags->i] == '0')
+			flags->flag_zero = 1;
+		if (format[flags->i] == '-')
+			flags->flag_minus = 1;
+		if (flags->flag_minus == 1)
+			flags->flag_zero = 0;
+		flags->i++;
+	}
 }

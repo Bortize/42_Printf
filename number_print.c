@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   number_print.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 11:34:12 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/10 12:12:55 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/09 23:17:10 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/09/10 12:43:29 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include	"ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+void	number_print(t_struct *flags, int integer)
 {
-	t_struct	*flags;
+	char *number_str;
 
-	if (!(flags = (t_struct *)malloc(sizeof(t_struct))))
-		return (0);
-	initialize_flags(flags);
-	if (format == NULL)
-		return (-1);
-	va_start(flags->ap, format);
-	if (ft_strchr(format, '%'))
-		check_flags(format, flags);
+	flags->j = 0;
+	if (flags->flag_precision && flags->precision == 0 && integer == 0)
+		flags->j = 0;
 	else
 	{
-		ft_putstr_fd((char *)format, 1);
-		flags->len = ft_strlen(format);
+		number_str = ft_itoa(integer);
+		while (number_str[flags->j] != '\0')
+	{
+		flags->len += write(1, &number_str[flags->j], 1);
+		flags->j++;
+		}
+		free(number_str);
+		number_str = NULL;
 	}
-	va_end(flags->ap);
-	return (flags->len);
 }
