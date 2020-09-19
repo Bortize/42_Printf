@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flags_trigger.c                                    :+:      :+:    :+:   */
+/*   initialize_flags.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/24 11:23:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/24 11:27:56 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/08/21 16:18:28 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/09/08 19:21:41 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
-void	flags_trigger(const char *format, t_struct *flags)
+void	initialize_flags(t_struct *flags)
 {
-	minus_zero_flag(format, flags);
-	width_flag(format, flags);
-	precision_flag(format, flags);
+	flags->j = 0;
+	flags->len = 0;
+	flags->flag_minus = 0;
+	flags->flag_zero = 0;
+	flags->aux = 0;
+	flags->width = 0;
+	flags->flag_width = 0;
+	flags->count = 0;
 }

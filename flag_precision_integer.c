@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flags_trigger.c                                    :+:      :+:    :+:   */
+/*   flag_precision_integer.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/24 11:23:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/24 11:27:56 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/09 08:50:52 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/09/09 09:31:20 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
-void	flags_trigger(const char *format, t_struct *flags)
+void	flag_precision_integer(t_struct *flags)
 {
-	minus_zero_flag(format, flags);
-	width_flag(format, flags);
-	precision_flag(format, flags);
+	int num_len;
+
+	num_len = flags->count;
+	flags->j = 0;
+	if (flags->flag_integer_negative)
+		num_len -= 1;
+	if (flags->precision > num_len)
+		while (flags->j < (flags->precision - num_len))
+		{
+			write (1, "0", 1);
+			flags->len++;
+			flags->j++;
+		}
 }

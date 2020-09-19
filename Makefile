@@ -5,30 +5,70 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/07/21 11:14:54 by bgomez-r          #+#    #+#              #
-#    Updated: 2020/07/22 12:07:36 by bgomez-r         ###   ########.fr        #
+#    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
+#    Updated: 2020/09/10 12:38:41 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME		=	libftprintf.a
 
-FUNCTIONS = ft_printf.c \
-			start_flags.c \
-			check_flags.c \
-			flags_trigger.c \
+LIBFT		=	libft.a
 
-OBJS = ${FUNCTIONS:.c=.o}
+SRCS		=	ft_printf.c \
+				initialize_flags.c \
+				check_flags.c \
+				flags_trigger.c \
+				minus_zero_flag.c \
+				width_flag.c \
+				flag_width_integer.c \
+				print_integer_width.c \
+				print_negative.c \
+				flag_zero_integer.c \
+				precision_flag.c \
+				check_type.c \
+				int_counter.c \
+				type_integer.c \
+				flag_precision_integer.c \
+				number_print.c \
+				ft_putchar.c \
+				main.c
+#Compilador
+CC			= @gcc
+#Indica los argumentos que se van a pasar al ßcompilador
+CFLAGS		= -Wall -Wextra -Werror -g
+#Variable que contiene todos los ficheros .o evitando que tenga que listarlos todo el tiempo. Ademas en la misma variable los pasa de .c a .o
+OBJS		= $(SRCS:.c=.o)
+# indica una lista separada por comas de directorios donde buscar los archivos de cabecera
+INCLUDE		= ./libft
 
-all: ${NAME}
+AR			= ar rcs
 
-NAME: ${FUNCTIONS} ft_printf.h
+RM			= rm -rf
+
+.c.o:
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+all:		$(NAME)
+
+$(NAME):	$(OBJS) $(INCLUDE)
+				$(CC) $(CFLAGS) -c $(SRCS)
+				make -C $(INCLUDE)
+				cp libft/libft.a .
+				mv libft.a $(NAME)
+				@$(AR) $(NAME) $(OBJS)
+				ranlib $(NAME)
+				#Esta linea produce el archivo de salida 'a.out' para poder ver el main
+				$(CC) -g -L . libftprintf.a main.c
 
 clean:
-		@-${RM} ${OBJS}
+			$(RM) $(OBJS)
+			make -C $(INCLUDE) clean
 
-fclean: clean
-		@-${RM} ${NAME}
+fclean:     clean
+				$(RM) $(NAME)
+				make -C $(INCLUDE) fclean
+				$(RM) a.out a.out.dSYM
 
-re:		fclean all
+re:			fclean all
 
-
+.PHONY:		all clean fclean re

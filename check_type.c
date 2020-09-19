@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flags_trigger.c                                    :+:      :+:    :+:   */
+/*   check_type.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/24 11:23:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/24 11:27:56 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/08/25 08:53:06 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/08/25 09:12:44 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	flags_trigger(const char *format, t_struct *flags)
+void	check_type(const char *format, t_struct *flags)
 {
-	minus_zero_flag(format, flags);
-	width_flag(format, flags);
-	precision_flag(format, flags);
+	if (format[flags->i] == 'i' || format[flags->i] == 'd')
+		type_integer(flags);
 }

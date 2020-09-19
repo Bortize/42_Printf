@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   check_flags.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/22 09:07:16 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 12:05:23 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/08/24 09:19:07 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/09/08 17:55:29 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include	"ft_printf.h"
 
-int		check_flags(const char *format, t_struct *flags)
+void	check_flags(const char *format, t_struct *flags)
 {
 	while (format[flags->i])
 	{
-		if (format[flags->i] == '%')
+		if (ft_strchr("%", format[flags->i]))
 		{
 			flags->i++;
-			if (ft_strcht("*.-0123456789", format[flags->i]))
-				flags_trigger(format, flags);
-			if (ft_strchr("scupidxX%", format[flags->i]))
-				check_type(format, flags);
+			if (format[flags->i] == '%')
+				flags_trigger (format, flags);
+			if (ft_strchr("idscupxX%", format[flags->i]))
+				check_type (format, flags);
 		}
 		else
 		{
-			write(1, &format[flags->i], 1);
+			write (1, &format[flags->i], 1);
 			flags->len++;
 		}
-		if (format[flags->i] == '\0')
-			flags->i++;
+		if (format[flags->i] != '\0')
+		flags->i++;
 	}
 }

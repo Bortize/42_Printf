@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flags_trigger.c                                    :+:      :+:    :+:   */
+/*   number_print.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/24 11:23:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/24 11:27:56 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/09 23:17:10 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/09/10 12:43:29 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	flags_trigger(const char *format, t_struct *flags)
+void	number_print(t_struct *flags, int integer)
 {
-	minus_zero_flag(format, flags);
-	width_flag(format, flags);
-	precision_flag(format, flags);
+	char *number_str;
+
+	flags->j = 0;
+	if (flags->flag_precision && flags->precision == 0 && integer == 0)
+		flags->j = 0;
+	else
+	{
+		number_str = ft_itoa(integer);
+		while (number_str[flags->j] != '\0')
+	{
+		flags->len += write(1, &number_str[flags->j], 1);
+		flags->j++;
+		}
+		free(number_str);
+		number_str = NULL;
+	}
 }
