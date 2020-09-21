@@ -6,7 +6,7 @@
 /*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 21:36:22 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/21 22:13:12 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/09/21 23:38:29 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void    flag_width_string(t_struct *flags, char *string)
 {
     flags->j;
-    if (flags->flag_minus == 0 && flag->flag_zero == 0)
+    if (flags->flag_minus == 0 && flags->flag_zero == 0)
     {
-        if (string == 0 && flag->precision == 0)
+        if (string == 0 && flags->precision == 0)
             flags->count = 0;
         flags->aux = flags->precision > flags->count ? 
             flags->precision : flags->count;

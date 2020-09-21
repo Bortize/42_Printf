@@ -6,7 +6,7 @@
 /*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/21 21:56:28 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/09/21 23:38:16 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void	flag_minus_integer(t_struct *flags, int intger);
 void    type_string(t_struct *flags);
 void    flag_width_string(t_struct *flags, char *string);
 void	print_width_string(t_struct *flags);
+void	print_string(t_struct *flags, char *str);
 
 #endif

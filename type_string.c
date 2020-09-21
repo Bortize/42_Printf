@@ -6,7 +6,7 @@
 /*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 18:21:17 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/21 22:58:12 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/09/21 23:36:23 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void    type_string(t_struct *flags)
         flag_zero_integer(flags);
     if (flags->flag_precision)
         flag_precision_string(flags, str);
+    print_string(flags, str);
         
 }
