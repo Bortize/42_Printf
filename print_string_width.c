@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_zero_integer.c                                :+:      :+:    :+:   */
+/*   print_string_width.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/08 12:24:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/21 22:51:07 by borjagrd         ###   ########.fr       */
+/*   Created: 2020/09/21 21:56:40 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/09/21 22:05:15 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include    "ft_printf.h"
 
-void	flag_zero_integer(t_struct *flags)
+void    print_string_width(t_struct *flags)
 {
-	flags->j = 0;
-	if (flags->flag_width && (flags->width > flags->count))
-	{
-		while (flags->j < (flags->width - flags->count))
-		{
-			ft_putchar("0");
-			flags->len++;
-			flags->j++;
-		}
-	}
+    int total;
+
+    flags->j = 0;
+    if (flags->count > flags->precision && flags->flag_precision == 1)
+        total = (flags->width - flags->precision);
+    else
+        total = (flags->width - flags->count);
+    while (flags->j < total)
+    {
+        ft_putchar(" ");
+        flags->len++;
+        flags->j++;
+    }
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/10 12:42:05 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/21 23:38:16 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,9 @@ void	int_counter(t_struct *flags, int integer);
 void	flag_precision_integer(t_struct *flags);
 void	number_print(t_struct *flags, int integer);
 void	flag_minus_integer(t_struct *flags, int intger);
+void    type_string(t_struct *flags);
+void    flag_width_string(t_struct *flags, char *string);
+void	print_width_string(t_struct *flags);
+void	print_string(t_struct *flags, char *str);
 
 #endif

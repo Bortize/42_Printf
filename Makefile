@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/09/10 12:38:41 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/09/21 23:37:53 by borjagrd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,10 @@ SRCS		=	ft_printf.c \
 				flag_precision_integer.c \
 				number_print.c \
 				ft_putchar.c \
+				type_string.c \
+				flag_width_string.c \
+				print_string_width.c \
+				print_string.c \
 				main.c
 #Compilador
 CC			= @gcc

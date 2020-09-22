@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_zero_integer.c                                :+:      :+:    :+:   */
+/*   flag_precision_string.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/08 12:24:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/21 22:51:07 by borjagrd         ###   ########.fr       */
+/*   Created: 2020/09/21 22:58:33 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/09/21 23:29:09 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include    "ft_printf.h"
 
-void	flag_zero_integer(t_struct *flags)
+void    flag_precision_string(t_struct *flags, char *string)
 {
-	flags->j = 0;
-	if (flags->flag_width && (flags->width > flags->count))
-	{
-		while (flags->j < (flags->width - flags->count))
-		{
-			ft_putchar("0");
-			flags->len++;
-			flags->j++;
-		}
-	}
+    int paint;
+
+    flags->j = 0;
+    paint = flags->precision < flags->count ? flags->precision : flags->count;
+    while (flags->j < paint)
+    {
+        ft_putchar(&string[flags->j]);
+        flags->len++;
+        flags->j++;
+    }
 }
