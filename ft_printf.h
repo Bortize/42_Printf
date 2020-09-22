@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/21 23:38:16 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/09/22 12:08:40 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void    type_string(t_struct *flags);
 void    flag_width_string(t_struct *flags, char *string);
 void	print_width_string(t_struct *flags);
 void	print_string(t_struct *flags, char *str);
+void	flag_minus_string(t_struct *flags);
 
 #endif

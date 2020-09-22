@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/09/21 23:37:53 by borjagrd         ###   ########.fr        #
+#    Updated: 2020/09/22 12:08:16 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS		=	ft_printf.c \
 				flag_width_string.c \
 				print_string_width.c \
 				print_string.c \
+				flag_minus_string.c \
 				main.c
 #Compilador
 CC			= @gcc
