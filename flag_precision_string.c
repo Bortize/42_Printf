@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   flag_precision_string.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 22:58:33 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/21 23:29:09 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/09/23 12:01:33 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include    "ft_printf.h"
 
-void    flag_precision_string(t_struct *flags, char *string)
+void    flag_precision_string(t_struct *flags, char *str)
 {
     int paint;
 

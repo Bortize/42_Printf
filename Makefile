@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/09/22 12:08:16 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/09/23 11:58:45 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ SRCS		=	ft_printf.c \
 				type_integer.c \
 				flag_precision_integer.c \
 				number_print.c \
-				ft_putchar.c \
 				type_string.c \
 				flag_width_string.c \
 				print_string_width.c \
@@ -38,7 +37,7 @@ SRCS		=	ft_printf.c \
 				flag_minus_string.c \
 				main.c
 #Compilador
-CC			= @gcc
+CC			= gcc
 #Indica los argumentos que se van a pasar al ßcompilador
 CFLAGS		= -Wall -Wextra -Werror -g
 #Variable que contiene todos los ficheros .o evitando que tenga que listarlos todo el tiempo. Ademas en la misma variable los pasa de .c a .o
@@ -53,17 +52,21 @@ RM			= rm -rf
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-all:		$(NAME)
+all:		$(LIBFT) $(NAME)
+
+$(LIBFT):
+			cd libft/; \
+			make all;
 
 $(NAME):	$(OBJS) $(INCLUDE)
 				$(CC) $(CFLAGS) -c $(SRCS)
 				make -C $(INCLUDE)
-				cp libft/libft.a .
+				cp libft/libft.a ./
 				mv libft.a $(NAME)
-				@$(AR) $(NAME) $(OBJS)
+				$(AR) $(NAME) $(OBJS)
 				ranlib $(NAME)
 				#Esta linea produce el archivo de salida 'a.out' para poder ver el main
-				$(CC) -g -L . libftprintf.a main.c
+				$(CC) -g -L ./ libftprintf.a main.c
 
 clean:
 			$(RM) $(OBJS)

@@ -1,1 +1,7 @@
 pft_2019/
+*.o
+*.a
+a.out
+a.out.*
+.DS_Store
+
