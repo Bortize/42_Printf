@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/09/24 12:38:47 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/09/24 21:21:11 by borjagrd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,11 +35,11 @@ SRCS		=	ft_printf.c \
 				print_string_width.c \
 				print_string.c \
 				flag_minus_string.c \
-				type_char. c \
+				type_char.c \
 				main.c
 #Compilador
 CC			= gcc
-#Indica los argumentos que se van a pasar al ßcompilador
+#Indica los argumentos que se van a pasar al compilador
 CFLAGS		= -Wall -Wextra -Werror -g
 #Variable que contiene todos los ficheros .o evitando que tenga que listarlos todo el tiempo. Ademas en la misma variable los pasa de .c a .o
 OBJS		= $(SRCS:.c=.o)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_char.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 12:37:47 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/24 12:52:12 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/24 20:32:44 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	type_char(t_struct *flags)
 {
 	char c;
 
-	flags->j;
+	flags->j = 0;
 	c = (char)va_arg(flags->ap, int);
 	if (flags->flag_width && flags->flag_minus == 0)
-		while (flasg->j < (flags->width - 1);
+		while (flags->j < (flags->width - 1))
 		{
 			write(1, " ", 1);
 			flags->len++;
@@ -28,7 +28,7 @@ void	type_char(t_struct *flags)
 	write(1, &c, 1);
 	flags->len++;
 	if (flags->flag_minus)
-		while (flasg->j < flags->while - 1)
+		while (flags->j < flags->width - 1)
 		{
 			write(1, " ", 1);
 			flags->len++;
