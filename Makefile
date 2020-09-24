@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/09/23 11:58:45 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/09/24 12:38:47 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRCS		=	ft_printf.c \
 				print_string_width.c \
 				print_string.c \
 				flag_minus_string.c \
+				type_char. c \
 				main.c
 #Compilador
 CC			= gcc
@@ -52,11 +53,7 @@ RM			= rm -rf
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-all:		$(LIBFT) $(NAME)
-
-$(LIBFT):
-			cd libft/; \
-			make all;
+all:		$(NAME)
 
 $(NAME):	$(OBJS) $(INCLUDE)
 				$(CC) $(CFLAGS) -c $(SRCS)
@@ -72,7 +69,7 @@ clean:
 			$(RM) $(OBJS)
 			make -C $(INCLUDE) clean
 
-fclean:     clean
+fclean:		clean
 				$(RM) $(NAME)
 				make -C $(INCLUDE) fclean
 				$(RM) a.out a.out.dSYM

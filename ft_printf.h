@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/23 12:03:13 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/24 12:39:05 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ void	flag_minus_string(t_struct *flags);
 void	type_string(t_struct *flags);
 void	flag_precision_string(t_struct *flags, char *str);
 void	print_string_width(t_struct *flags);
+void	type_char(t_struct *flags);
 
 #endif
