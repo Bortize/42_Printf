@@ -6,9 +6,11 @@
 #    By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/09/24 21:21:11 by borjagrd         ###   ########.fr        #
+#    Updated: 2020/09/25 00:26:31 by borjagrd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+.DELETE_ON_ERROR:# Borra el target en caso de que falle la creacion del target por cualquier motivo
 
 NAME		=	libftprintf.a
 
@@ -56,14 +58,17 @@ RM			= rm -rf
 all:		$(NAME)
 
 $(NAME):	$(OBJS) $(INCLUDE)
-				$(CC) $(CFLAGS) -c $(SRCS)
-				make -C $(INCLUDE)
-				cp libft/libft.a ./
-				mv libft.a $(NAME)
+				@echo "\n\n\n		FASE DE COMPILADO DEL PROGRAMA 'libft.a' \n"
+				@$(CC) $(CFLAGS) -c $(SRCS)
+				@make -C $(INCLUDE)
+				@cp libft/libft.a ./
+				@mv libft.a $(NAME)
+				@echo "\n\n\n		GENERANDO LIBRERIA 'libftprintf.a' \n"
 				$(AR) $(NAME) $(OBJS)
-				ranlib $(NAME)
+				@ranlib $(NAME)
+				@echo "\n		INDEX libftprintf.a GENERADO CON ÉXITO\n\n\n"
 				#Esta linea produce el archivo de salida 'a.out' para poder ver el main
-				$(CC) -g -L ./ libftprintf.a main.c
+				@$(CC) -g -L ./ libftprintf.a main.c
 
 clean:
 			$(RM) $(OBJS)
