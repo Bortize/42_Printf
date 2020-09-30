@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 14:10:46 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/28 10:46:06 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/09/30 11:30:18 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	type_unsigned_int(t_struct *flags)
 	print_unsigned(flags, integer);
 	if (flags->flag_minus)
 		flag_minus_integer(flags, integer);
-
 }
 
 void	int_counter_unsigned(t_struct *flags, unsigned int integer)
