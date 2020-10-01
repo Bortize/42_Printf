@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/09/30 12:16:16 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/01 14:04:38 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,8 @@ SRCS		=	ft_printf.c \
 				flag_minus_string.c \
 				type_char.c \
 				type_hexade.c \
+				print_hexa_low.c \
+				print_hexa_upper.c \
 				main.c
 #Compilador
 CC			= gcc
