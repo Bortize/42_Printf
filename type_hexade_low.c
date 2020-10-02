@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_hexade.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:36:34 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/30 12:49:16 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/02 22:07:01 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,6 @@ void	type_hexa_low(t_struct *flags)
 	if (hexade == 0)
 		hexade_zero(flags, hexade)
 	print_hexa_low(flags, hexade);
+	if (flags->flag_minus)
+		flag_minus_integer(flags, hexade);
 }

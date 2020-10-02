@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/01 13:44:55 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/02 23:53:44 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	type_char(t_struct *flags);
 void	type_hexa_low(t_struct *flags);
 void	hexa_countdigits(t_struct *flags, unsigned int hexade);
 void	hexade_zero(t_struct *flasg, unsigned int hexade);
-void	print_hexa_low(t_struct *flags, unsigned int hexade);
-void	print_hexa_upper(t_struct *flags, unsigned int hexade);
+void	type_hexade_low(t_struct *flags);
+void	type_hexade_upper(t_struct *flags);
 
 #endif
