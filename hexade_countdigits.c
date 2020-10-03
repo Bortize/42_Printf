@@ -6,18 +6,18 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:41:58 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/30 11:51:10 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/03 11:47:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	hexade_countdigits(t_struct *flags, unsigned int hexa)
+void	hexade_countdigits(t_struct *flags, unsigned int hexade)
 {
 	flags->count = 0;
-	while (hexa > 15)
+	while (hexade > 15)
 	{
-		hexa = hexa / 16;
+		hexade = hexade / 16;
 		flags->count++;
 	}
 	flags->count++;

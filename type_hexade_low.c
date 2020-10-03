@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_hexade.c                                      :+:      :+:    :+:   */
+/*   type_hexade_low.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:36:34 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/02 22:07:01 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/03 12:42:03 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	type_hexa_low(t_struct *flags)
+void	type_hexade_low(t_struct *flags)
 {
 	unsigned int	hexade;
 
 	flags->count = 0;
 	hexade = 0;
 	hexade = va_arg(flags->ap, unsigned int);
-	hexa_countdigits(flags, hexade);
+	hexade_countdigits(flags, hexade);
 	if (flags->flag_width)
 		flag_width_integer(flags, hexade);
 	if (hexade < 0)
@@ -29,8 +29,8 @@ void	type_hexa_low(t_struct *flags)
 	if (flags->flag_precision)
 		flag_precision_integer(flags);
 	if (hexade == 0)
-		hexade_zero(flags, hexade)
-	print_hexa_low(flags, hexade);
+		hexade_zero(flags, hexade);
+	print_hexade_low(flags, hexade);
 	if (flags->flag_minus)
 		flag_minus_integer(flags, hexade);
 }

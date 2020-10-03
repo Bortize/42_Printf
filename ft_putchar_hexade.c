@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_hexa_upper.c                                 :+:      :+:    :+:   */
+/*   ft_putchar_hexade.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/01 14:08:39 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/01 14:26:48 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/03 13:19:59 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/03 13:20:42 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	print_hexa_upper(t_struct *flags, unsigned int hexa)
+void	ft_putchar_hexade(char c)
 {
-	
+	write(1, &c, 1);
 }
