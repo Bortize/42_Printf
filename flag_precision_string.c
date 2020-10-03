@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number_print.c                                     :+:      :+:    :+:   */
+/*   flag_precision_string.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 23:17:10 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/25 08:39:11 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/21 22:58:33 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/09/28 10:42:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	number_print(t_struct *flags, int integer)
+void	flag_precision_string(t_struct *flags, char *str)
 {
-	char *number_str;
+	int paint;
 
 	flags->j = 0;
-	if (flags->flag_precision && flags->precision == 0 && integer == 0)
-		flags->j = 0;
-	else
+	paint = flags->precision < flags->count ? flags->precision : flags->count;
+	while (flags->j < paint)
 	{
-		number_str = ft_itoa(integer);
-		while (number_str[flags->j] != '\0')
-	{
-		flags->len += write(1, &number_str[flags->j], 1);
+		ft_putchar(&string[flags->j]);
+		flags->len++;
 		flags->j++;
-		}
-		free(number_str);
-		number_str = NULL;
 	}
 }

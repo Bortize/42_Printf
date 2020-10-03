@@ -6,9 +6,11 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/09/10 12:38:41 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/03 13:21:04 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+.DELETE_ON_ERROR:# Borra el target en caso de que falle la creacion del target por cualquier motivo
 
 NAME		=	libftprintf.a
 
@@ -30,11 +32,23 @@ SRCS		=	ft_printf.c \
 				type_integer.c \
 				flag_precision_integer.c \
 				number_print.c \
-				ft_putchar.c \
+				type_string.c \
+				flag_width_string.c \
+				print_string_width.c \
+				print_string.c \
+				flag_minus_string.c \
+				type_char.c \
+				type_hexade_low.c \
+				type_hexade_upper.c \
+				print_hexade_low.c \
+				print_hexade_upper.c \
+				print_hexade_upper.c \
+				hexade_countdigits.c \
+				ft_putchar_hexade.c \
 				main.c
 #Compilador
-CC			= @gcc
-#Indica los argumentos que se van a pasar al ßcompilador
+CC			= gcc
+#Indica los argumentos que se van a pasar al compilador
 CFLAGS		= -Wall -Wextra -Werror -g
 #Variable que contiene todos los ficheros .o evitando que tenga que listarlos todo el tiempo. Ademas en la misma variable los pasa de .c a .o
 OBJS		= $(SRCS:.c=.o)
@@ -51,20 +65,23 @@ RM			= rm -rf
 all:		$(NAME)
 
 $(NAME):	$(OBJS) $(INCLUDE)
-				$(CC) $(CFLAGS) -c $(SRCS)
-				make -C $(INCLUDE)
-				cp libft/libft.a .
-				mv libft.a $(NAME)
-				@$(AR) $(NAME) $(OBJS)
-				ranlib $(NAME)
+				@echo "\n\n\n		FASE DE COMPILADO DEL PROGRAMA 'libft.a' \n"
+				@$(CC) $(CFLAGS) -c $(SRCS)
+				@make -C $(INCLUDE)
+				@cp libft/libft.a ./
+				@mv libft.a $(NAME)
+				@echo "\n\n\n		GENERANDO LIBRERIA 'libftprintf.a' \n"
+				$(AR) $(NAME) $(OBJS)
+				@ranlib $(NAME)
+				@echo "\n		INDEX libftprintf.a GENERADO CON ÉXITO\n\n\n"
 				#Esta linea produce el archivo de salida 'a.out' para poder ver el main
-				$(CC) -g -L . libftprintf.a main.c
+				@$(CC) -g -L ./ libftprintf.a main.c
 
 clean:
 			$(RM) $(OBJS)
 			make -C $(INCLUDE) clean
 
-fclean:     clean
+fclean:		clean
 				$(RM) $(NAME)
 				make -C $(INCLUDE) fclean
 				$(RM) a.out a.out.dSYM

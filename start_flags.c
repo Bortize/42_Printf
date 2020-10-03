@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number_print.c                                     :+:      :+:    :+:   */
+/*   start_flags.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 23:17:10 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/25 08:39:11 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/07/22 10:16:56 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/07/30 10:54:48 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
-void	number_print(t_struct *flags, int integer)
+void	start_flags(t_struct *flags)
 {
-	char *number_str;
-
-	flags->j = 0;
-	if (flags->flag_precision && flags->precision == 0 && integer == 0)
-		flags->j = 0;
-	else
-	{
-		number_str = ft_itoa(integer);
-		while (number_str[flags->j] != '\0')
-	{
-		flags->len += write(1, &number_str[flags->j], 1);
-		flags->j++;
-		}
-		free(number_str);
-		number_str = NULL;
-	}
+	flags->i = 0;
+	flags->len = 0;
+	flags->flag_minus = 0;
+	flags->flag_zero = 0;
+	flags->aux = 0;
+	flags->flag_aux = 0;
+	flags->flag_width = 0;
+	flags->flag_ghostplus = 0;
 }

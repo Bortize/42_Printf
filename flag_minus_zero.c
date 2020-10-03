@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number_print.c                                     :+:      :+:    :+:   */
+/*   flag_minus_zero.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 23:17:10 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/25 08:39:11 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/07/22 12:14:49 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/07/22 12:33:44 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
-void	number_print(t_struct *flags, int integer)
+void	flag_minus_zero(const char *format, t_struct *flags)
 {
-	char *number_str;
-
-	flags->j = 0;
-	if (flags->flag_precision && flags->precision == 0 && integer == 0)
-		flags->j = 0;
-	else
+	flags->flag_minus = 0;
+	flags->flag_zero = 0;
+	while (format[flags->i] == '0' || format[flags->i] == '-')
 	{
-		number_str = ft_itoa(integer);
-		while (number_str[flags->j] != '\0')
-	{
-		flags->len += write(1, &number_str[flags->j], 1);
-		flags->j++;
-		}
-		free(number_str);
-		number_str = NULL;
+		if (format[flags->i] == '-')
+			flags->flag_minus = 1;
+		if (format[flags->i] == '0')
+			flags->flag_zero = 1;
+		if (flags->flag_minus = 1)
+			flags->flag_zero = 0;
 	}
+	flags->i++;
 }

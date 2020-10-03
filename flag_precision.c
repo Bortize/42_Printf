@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number_print.c                                     :+:      :+:    :+:   */
+/*   flag_precision.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 23:17:10 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/25 08:39:11 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/07/29 10:08:14 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/07/29 12:17:43 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
-void	number_print(t_struct *flags, int integer)
+flags->precision = 0;
+flags->flag_precision = 0;
+flags->aux = 0;
+while (format[flags->i] == '*' || format[flags->i] == '.')
 {
-	char *number_str;
-
-	flags->j = 0;
-	if (flags->flag_precision && flags->precision == 0 && integer == 0)
-		flags->j = 0;
+	if (format[flags->i] == '*')
+	{
+		flags->aux = va_arg(flags->ap, int);
+		flags->precision = flags->aux > 0 ? flags->aux : flag->precison;
+		flags->flag_precison = 1;
+		flags->i++;
+	}
 	else
 	{
-		number_str = ft_itoa(integer);
-		while (number_str[flags->j] != '\0')
-	{
-		flags->len += write(1, &number_str[flags->j], 1);
-		flags->j++;
+		flags->i++
+		while (flags->aux = ft_isdigit(format[flags->i]))
+		{
+			
 		}
-		free(number_str);
-		number_str = NULL;
 	}
 }

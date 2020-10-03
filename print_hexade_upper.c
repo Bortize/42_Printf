@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number_print.c                                     :+:      :+:    :+:   */
+/*   print_hexade_upper.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 23:17:10 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/25 08:39:11 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/01 14:08:39 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/03 13:22:14 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	number_print(t_struct *flags, int integer)
+void	print_hexade_upper(t_struct *flags, unsigned int hexade)
 {
-	char *number_str;
-
-	flags->j = 0;
-	if (flags->flag_precision && flags->precision == 0 && integer == 0)
-		flags->j = 0;
-	else
+	if (hexade != 0)
 	{
-		number_str = ft_itoa(integer);
-		while (number_str[flags->j] != '\0')
-	{
-		flags->len += write(1, &number_str[flags->j], 1);
-		flags->j++;
+		print_hexade_low(flags, hexade / 16);
+		if (hexade % 16 >= 10)
+		{
+			ft_putchar_hexade('A' + (hexade % 16 % 10));
+			flags->len++;
 		}
-		free(number_str);
-		number_str = NULL;
+		else
+		{
+			ft_putchar_hexade('0' + hexade % 16);
+			flags->len++;
+		}
 	}
 }

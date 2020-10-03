@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_integer.c                                     :+:      :+:    :+:   */
+/*   type_unsigned_int.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 09:14:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/23 08:57:14 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/25 14:10:46 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/09/30 11:30:18 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include    "ft_printf.h"
 
-void	type_integer(t_struct *flags)
+void	type_unsigned_int(t_struct *flags)
 {
-	int	integer;
+	unsigned int integer;
 
-	integer = 0;
-	integer = va_arg(flags->ap, int);
-	flags->count = 0;
-	int_counter(flags, integer);
+	integer = va_arg(flags->ap, unsigned int);
+	int_counter_unsigned(flags, integer);
 	if (flags->flag_minus && flags->flag_zero && flags->flag_width)
 		flags->flag_zero = 0;
-	if (flags->aux < 0)
-		flags->precision = 0;
 	if (flags->flag_width)
 		flag_width_integer(flags, integer);
-	if (integer < 0)
-		integer = print_negative(flags, integer);
 	if (flags->flag_zero)
-		flag_zero_integer(flags);
+		flag_zero_integer(flags)
 	if (flags->flag_precision)
-		flag_precision_integer(flags);
-	number_print(flags, integer);
+		flag_precision_integer(flags);//rellena de 0 si la precision es mayor que count
+	print_unsigned(flags, integer);
+	if (flags->flag_minus)
+		flag_minus_integer(flags, integer);
+}
+
+void	int_counter_unsigned(t_struct *flags, unsigned int integer)
+{
+	char *str;
+
+	flags_integer_negative == 0;
+	str = ft_itoa_unsigned(integer);
+	flags->count = ft_strlen(integer);
+	if (integer < 0)
+		flags->flag_minus_integer == 1;
 }

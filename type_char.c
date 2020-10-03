@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_zero_integer.c                                :+:      :+:    :+:   */
+/*   type_char.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/08 12:24:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/21 22:51:07 by borjagrd         ###   ########.fr       */
+/*   Created: 2020/09/24 12:37:47 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/09/24 20:32:44 by borjagrd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include	"ft_printf.h"
 
-void	flag_zero_integer(t_struct *flags)
+void	type_char(t_struct *flags)
 {
+	char c;
+
 	flags->j = 0;
-	if (flags->flag_width && (flags->width > flags->count))
-	{
-		while (flags->j < (flags->width - flags->count))
+	c = (char)va_arg(flags->ap, int);
+	if (flags->flag_width && flags->flag_minus == 0)
+		while (flags->j < (flags->width - 1))
 		{
-			ft_putchar("0");
+			write(1, " ", 1);
 			flags->len++;
 			flags->j++;
 		}
-	}
+	write(1, &c, 1);
+	flags->len++;
+	if (flags->flag_minus)
+		while (flags->j < flags->width - 1)
+		{
+			write(1, " ", 1);
+			flags->len++;
+			flags->j++;
+		}
 }

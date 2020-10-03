@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number_print.c                                     :+:      :+:    :+:   */
+/*   flag_minus_string.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 23:17:10 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/25 08:39:11 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/22 11:52:38 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/09/23 12:04:34 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	number_print(t_struct *flags, int integer)
+void	flag_minus_string(t_struct *flags)
 {
-	char *number_str;
+	int total;
 
+	total = 0;
 	flags->j = 0;
-	if (flags->flag_precision && flags->precision == 0 && integer == 0)
-		flags->j = 0;
+	if (flags->flag_minus && (flags->count > flags->precision))
+		total = flags->width - flags->precision;
 	else
+		total = flags->width - flags->count;
+	while (flags->j < total)
 	{
-		number_str = ft_itoa(integer);
-		while (number_str[flags->j] != '\0')
-	{
-		flags->len += write(1, &number_str[flags->j], 1);
+		ft_putchar(" ");
+		flags->len++;
 		flags->j++;
-		}
-		free(number_str);
-		number_str = NULL;
 	}
 }
