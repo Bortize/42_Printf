@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/10/04 14:51:56 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/05 12:01:52 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS		=	ft_printf.c \
 				flags_trigger.c \
 				minus_zero_flag.c \
 				width_flag.c \
+				ft_putchar_hexade.c \
 				flag_width_integer.c \
 				print_integer_width.c \
 				print_negative.c \
@@ -44,9 +45,9 @@ SRCS		=	ft_printf.c \
 				print_hexade_upper.c \
 				print_hexade_upper.c \
 				hexade_countdigits.c \
-				ft_putchar_hexade.c \
 				type_pointer.c \
 				flag_minus_pointer.c \
+				print_pointer \
 				main.c
 #Compilador
 CC			= gcc
@@ -67,17 +68,16 @@ RM			= rm -rf
 all:		$(NAME)
 
 $(NAME):	$(OBJS) $(INCLUDE)
-				@echo "\n\n\n		FASE DE COMPILADO DEL PROGRAMA 'libft.a' \n"
-				@$(CC) $(CFLAGS) -c $(SRCS)
-				@make -C $(INCLUDE)
-				@cp libft/libft.a ./
-				@mv libft.a $(NAME)
-				@echo "\n\n\n		GENERANDO LIBRERIA 'libftprintf.a' \n"
+				echo "\n\n\n		FASE DE COMPILADO DEL PROGRAMA 'libft.a' \n"
+				$(CC) $(CFLAGS) -c $(SRCS)
+				make -C $(INCLUDE)
+				cp libft/libft.a ./
+				mv libft.a $(NAME)
+				echo "\n\n\n		GENERANDO LIBRERIA 'libftprintf.a' \n"
 				$(AR) $(NAME) $(OBJS)
-				@ranlib $(NAME)
-				@echo "\n		INDEX libftprintf.a GENERADO CON ÉXITO\n\n\n"
-				#Esta linea produce el archivo de salida 'a.out' para poder ver el main
-				@$(CC) -g -L ./ libftprintf.a main.c
+				ranlib $(NAME)
+				echo "\n		INDEX libftprintf.a GENERADO CON ÉXITO\n\n\n"
+				$(CC) -g -L ./ libftprintf.a main.c
 
 clean:
 			$(RM) $(OBJS)
