@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/10/05 12:30:20 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/05 13:08:52 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,35 +19,38 @@ LIBFT		=	libft.a
 SRCS		=	ft_printf.c \
 				initialize_flags.c \
 				check_flags.c \
-				flags_trigger.c \
+				check_type.c \
 				minus_zero_flag.c \
 				width_flag.c \
-				ft_putchar_hexade.c \
-				flag_width_integer.c \
-				print_integer_width.c \
-				print_negative.c \
-				flag_zero_integer.c \
 				precision_flag.c \
-				check_type.c \
+				flags_trigger.c \
 				int_counter.c \
-				type_integer.c \
-				flag_precision_integer.c \
 				number_print.c \
-				type_string.c \
+				hexade_countdigits.c \
+				flag_width_integer.c \
 				flag_width_string.c \
-				print_string_width.c \
-				print_string.c \
-				flag_minus_string.c \
+				type_integer.c \
+				type_unsigned_int.c \
+				type_string.c \
 				type_char.c \
 				type_hexade_low.c \
 				type_hexade_upper.c \
+				type_pointer.c \
+				flag_zero_integer.c \
+				flag_precision_integer.c \
+				print_integer_width.c \
+				print_negative.c \
+				print_string_width.c \
+				print_string.c \
 				print_hexade_low.c \
 				print_hexade_upper.c \
 				print_hexade_upper.c \
-				hexade_countdigits.c \
-				type_pointer.c \
+				print_pointer.c \
+				flag_minus_integer.c \
+				flag_minus_string.c \
 				flag_minus_pointer.c \
-				print_pointer \
+				flag_minus_pointer.c \
+				ft_putchar_hexade.c \
 				main.c
 
 CC			= gcc
