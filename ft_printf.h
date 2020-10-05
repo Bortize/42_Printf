@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/05 12:51:07 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/05 17:32:17 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct	s_struct
 	int	flag_precision;
 	int	count;
 	int	flag_integer_negative;
+	
 }				t_struct;
 
 int		ft_printf(const char *format, ...);
@@ -46,6 +47,7 @@ void	width_flag(const char *format, t_struct	*flags);
 void	precision_flag(const char *format, t_struct *flags);
 void	flags_trigger(const char *format, t_struct *flags);
 void	int_counter(t_struct *flags, int integer);
+void	int_counter_unsigned(t_struct *flags, unsigned int integer);
 void	number_print(t_struct *flags, int integer);
 void	hexade_countdigits(t_struct *flags, unsigned int hexade);
 void	flag_width_integer(t_struct *flags, long int integer);
@@ -64,7 +66,7 @@ void	flag_precision_integer(t_struct *flags);
 void	flag_precision_string(t_struct *flags, char *str);
 int		print_negative(t_struct *flags, long int integet);
 void	print_integer_width(t_struct *flags);
-void	print_width_string(t_struct *flags);
+void    print_unsigned(t_struct *flags, unsigned int unsign);
 void	print_string_width(t_struct *flags);
 void	print_integer(t_struct *flags, int integer);
 void	print_string(t_struct *flags, char *str);

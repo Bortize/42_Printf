@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/10/05 13:08:52 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/05 18:04:00 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,8 @@ SRCS		=	ft_printf.c \
 				print_integer_width.c \
 				print_negative.c \
 				print_string_width.c \
+				print_integer.c \
+				print_unsigned.c \
 				print_string.c \
 				print_hexade_low.c \
 				print_hexade_upper.c \

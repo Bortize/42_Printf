@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_integer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 10:42:04 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/09 10:52:09 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/05 18:02:39 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_integer(t_struct *flags, int integer)
 		flags->j = 0;
 	else
 	{
-		number = itoa(integer);
+		number = ft_itoa(integer);
 		while (number[flags->j] != '\0')
 		{
 			flags->len += write(1, &number[flags->j], 1);
