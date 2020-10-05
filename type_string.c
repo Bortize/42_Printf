@@ -6,13 +6,13 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 18:21:17 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/22 11:53:12 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/05 12:37:48 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
+#include	"ft_printf.h"
 
-void    type_string(t_struct *flags)
+void	type_string(t_struct *flags)
 {
 	char *str;
 

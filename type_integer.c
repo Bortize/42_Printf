@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 09:14:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/23 08:57:14 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/05 12:39:30 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ void	type_integer(t_struct *flags)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)
 		flag_precision_integer(flags);
-	number_print(flags, integer);
+	print_integer(flags, integer);
+	if (flags->flag_minus)
+		flag_minus_integer(flags, integer);
 }

@@ -6,11 +6,11 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/10/05 12:01:52 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/05 12:30:20 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.DELETE_ON_ERROR:# Borra el target en caso de que falle la creacion del target por cualquier motivo
+.DELETE_ON_ERROR:
 
 NAME		=	libftprintf.a
 
@@ -49,13 +49,13 @@ SRCS		=	ft_printf.c \
 				flag_minus_pointer.c \
 				print_pointer \
 				main.c
-#Compilador
+
 CC			= gcc
-#Indica los argumentos que se van a pasar al compilador
+
 CFLAGS		= -Wall -Wextra -Werror -g
-#Variable que contiene todos los ficheros .o evitando que tenga que listarlos todo el tiempo. Ademas en la misma variable los pasa de .c a .o
+
 OBJS		= $(SRCS:.c=.o)
-# indica una lista separada por comas de directorios donde buscar los archivos de cabecera
+
 INCLUDE		= ./libft
 
 AR			= ar rcs
