@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialize_flags.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 16:18:28 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/08 19:21:41 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/10/05 14:26:03 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,7 @@ void	initialize_flags(t_struct *flags)
 	flags->width = 0;
 	flags->flag_width = 0;
 	flags->count = 0;
+	flags->precision = 0;
+	flags->flag_precision = 0;
+	flasg->flag_minus_width = 0;
 }
