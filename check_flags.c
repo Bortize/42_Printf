@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_flags.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 09:19:07 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/08 17:55:29 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/10/07 11:33:30 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	check_flags(const char *format, t_struct *flags)
 		if (ft_strchr("%", format[flags->i]))
 		{
 			flags->i++;
-			if (format[flags->i] == '%')
+			if (ft_strchr("-0.*123456789", format[flags->i]))
 				flags_trigger (format, flags);
 			if (ft_strchr("idscupxX%", format[flags->i]))
 				check_type (format, flags);
