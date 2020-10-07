@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 09:19:07 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/07 11:33:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/07 11:36:59 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	check_flags(const char *format, t_struct *flags)
 		if (ft_strchr("%", format[flags->i]))
 		{
 			flags->i++;
-			if (ft_strchr("-0.*123456789", format[flags->i]))
+			if (ft_strchr("*.-0123456789", format[flags->i]))
 				flags_trigger (format, flags);
 			if (ft_strchr("idscupxX%", format[flags->i]))
 				check_type (format, flags);
