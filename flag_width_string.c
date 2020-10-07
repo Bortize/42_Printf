@@ -6,18 +6,18 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 21:36:22 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/28 10:44:07 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/07 11:57:40 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
+#include	"ft_printf.h"
 
-void    flag_width_string(t_struct *flags, char *string)
+void	flag_width_string(t_struct *flags, char *format)
 {
-
+	flags->j = 0;
 	if (flags->flag_minus == 0 && flags->flag_zero == 0)
 	{
-		if (string == 0 && flags->precision == 0)
+		if (format == 0 && flags->precision == 0)
 			flags->count = 0;
 		flags->aux = flags->precision > flags->count ?
 			flags->precision : flags->count;

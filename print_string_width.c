@@ -3,28 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   print_string_width.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 21:56:40 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/21 22:05:15 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/10/07 13:41:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
+#include	"ft_printf.h"
 
-void    print_string_width(t_struct *flags)
+void	print_string_width(t_struct *flags)
 {
-    int total;
+	int total;
 
-    flags->j = 0;
-    if (flags->count > flags->precision && flags->flag_precision == 1)
-        total = (flags->width - flags->precision);
-    else
-        total = (flags->width - flags->count);
-    while (flags->j < total)
-    {
-        ft_putchar(" ");
-        flags->len++;
-        flags->j++;
-    }
+	flags->j = 0;
+	if (flags->count > flags->precision && flags->flag_precision == 1)
+		total = flags->width - flags->precision;
+	else
+		total = flags->width - flags->count;
+	if (flags->width < total)
+		flags->j = 0;
+	else
+		while (flags->j < total)
+		{
+			write(1, " ", 1);
+			flags->len++;
+			flags->j++;
+		}
+	if (flags->count == 0)
+	{
+		while (flags->j < flags->width)
+		{
+			write(1, " ", 1);
+			flags->len++;
+			flags->j++;
+		}
+	}
 }

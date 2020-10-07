@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 18:21:17 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/05 12:37:48 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/07 11:47:03 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	type_string(t_struct *flags)
 {
 	char *str;
 
+	flags->count = 0;
 	str = va_arg(flags->ap, char *);
 	if (str == NULL)
 		str = "(null)";
