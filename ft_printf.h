@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/05 17:32:17 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/07 20:27:12 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,7 @@ void	flag_minus_integer(t_struct *flags, int intger);
 void	flag_minus_string(t_struct *flags);
 void	flag_minus_pointer(t_struct *flags, int pointer);
 void	ft_putchar_hexade(char c);
+char	*itoa(int n);
+char	*itoa_unsigned(unsigned int n);
 
 #endif

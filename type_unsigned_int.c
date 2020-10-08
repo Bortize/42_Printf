@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 14:10:46 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/05 18:01:39 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/07 20:51:50 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@ void	type_unsigned_int(t_struct *flags)
 {
 	unsigned int integer;
 
+	flags->count = 0;
+	integer = 0;
 	integer = va_arg(flags->ap, unsigned int);
 	int_counter_unsigned(flags, integer);
-	if (flags->flag_minus && flags->flag_zero && flags->flag_width)
-		flags->flag_zero = 0;
 	if (flags->flag_width)
 		flag_width_integer(flags, integer);
+	if (integer < 0)
+		integer = print_negative(flags, integer);
 	if (flags->flag_zero)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)
-		flag_precision_integer(flags);//rellena de 0 si la precision es mayor que count
+		flag_precision_integer(flags);
 	print_unsigned(flags, integer);
 	if (flags->flag_minus)
 		flag_minus_integer(flags, integer);
@@ -33,10 +35,10 @@ void	type_unsigned_int(t_struct *flags)
 
 void	int_counter_unsigned(t_struct *flags, unsigned int integer)
 {
-	char *str;
+	char	*str;
 
 	flags->flag_integer_negative = 0;
-	str = ft_itoa(integer);
+	str = itoa_unsigned(integer);
 	flags->count = ft_strlen(str);
 	if (integer < 0)
 		flags->flag_integer_negative = 1;

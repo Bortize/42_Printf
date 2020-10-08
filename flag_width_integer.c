@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flag_width_integer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 19:30:51 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/01 22:31:16 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/10/07 20:51:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void    flag_width_integer(t_struct *flags, long int integer)
 {
     flags->j = 0;
-    if (!(flags->flag_minus) && !(flags->flag_zero))
+    if ((flags->flag_minus == 0) && (flags->flag_zero == 0))
     {
         if (flags->flag_precision)
         {

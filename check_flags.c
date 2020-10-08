@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_flags.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 09:19:07 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/07 11:36:59 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/08 13:39:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_flags(const char *format, t_struct *flags)
 			flags->i++;
 			if (ft_strchr("*.-0123456789", format[flags->i]))
 				flags_trigger (format, flags);
-			if (ft_strchr("idscupxX%", format[flags->i]))
+			if (ft_strchr("iudscpxX%", format[flags->i]))
 				check_type (format, flags);
 		}
 		else
@@ -30,6 +30,6 @@ void	check_flags(const char *format, t_struct *flags)
 			flags->len++;
 		}
 		if (format[flags->i] != '\0')
-		flags->i++;
+			flags->i++;
 	}
 }

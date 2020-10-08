@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:36:47 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/05 18:06:24 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/07 20:33:22 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void    print_unsigned(t_struct *flags, unsigned int unsign)
         flags->j = 0;
     else
     {
-        format = ft_itoa(unsign);
+        format = itoa_unsigned(unsign);
         while (format[flags->j] != '\0')
         {
             write(1, &format[flags->j], 1);
