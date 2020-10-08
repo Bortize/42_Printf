@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/07 20:27:12 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/08 14:42:50 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	type_hexade_upper(t_struct *flags);
 void	type_pointer(t_struct *flags);
 void	type_char(t_struct *flags);
 void	flag_zero_integer(t_struct *flags);
-void	hexade_zero(t_struct *flasg, unsigned int hexade);
+void	hexade_zero(t_struct *flags, unsigned int hexade);
 void	flag_precision_integer(t_struct *flags);
 void	flag_precision_string(t_struct *flags, char *str);
 int		print_negative(t_struct *flags, long int integet);

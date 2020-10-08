@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_type.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 08:53:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/08/25 09:12:44 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/08 14:40:13 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 
 void	check_type(const char *format, t_struct *flags)
 {
-	if (format[flags->i] == 'i' || format[flags->i] == 'd')
+	if (format[flags->i] == 'd' || format[flags->i] == 'i')
 		type_integer(flags);
+	if (format[flags->i] == 's')
+		type_string(flags);
+	if (format[flags->i] == 'c')
+		type_char(flags);
+	if (format[flags->i] == 'u')
+		type_unsigned_int(flags);
+	if (format[flags->i] == 'x')
+		type_hexade_low(flags);
+	if (format[flags->i] == 'X')
+		type_hexade_upper(flags);
+	if (format[flags->i] == 'p')
+		type_pointer(flags);
 }

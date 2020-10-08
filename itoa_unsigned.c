@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 20:26:38 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/08 13:20:26 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/08 14:45:35 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	get_size(unsigned int nb)
 	return (size + 1);
 }
 
-char		*ft_itoa_unsigned(unsigned int n)
+char		*itoa_unsigned(unsigned int n)
 {
 	char			*str;
 	unsigned int	nb;

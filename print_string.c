@@ -3,25 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 23:36:54 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/21 23:41:33 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/10/08 20:47:50 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include    "ft_printf.h"
 
-void    print_string(t_struct *flags, char *str)
+void	print_string(t_struct *flags, char *str)
 {
-    if (!(flags->precision))
-    {
-        flags->j = 0;
-        while (str[flags->j] != '\0')
-        {
-            ft_putchar(&str[flags->j]);
-            flags->len++;
-            flags->j++;
-        }
-    }
+	if (flags->flag_precision == 0)
+	{
+		flags->j = 0;
+		{
+			while (str[flags->j] != '\0')
+			{
+				flags->len += write(1, &str[flags->j], 1);
+				flags->j++;
+			}
+		}
+	}
 }
