@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_hexade_upper.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 14:08:39 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/03 13:22:14 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/12 19:31:24 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	print_hexade_upper(t_struct *flags, unsigned int hexade)
 		print_hexade_low(flags, hexade / 16);
 		if (hexade % 16 >= 10)
 		{
-			ft_putchar_hexade('A' + (hexade % 16 % 10));
+			ft_putchar('A' + (hexade % 16 % 10));
 			flags->len++;
 		}
 		else
 		{
-			ft_putchar_hexade('0' + hexade % 16);
+			ft_putchar('0' + hexade % 16);
 			flags->len++;
 		}
 	}

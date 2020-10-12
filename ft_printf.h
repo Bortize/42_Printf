@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/08 14:42:50 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/12 19:30:21 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	type_char(t_struct *flags);
 void	type_hexade_low(t_struct *flags);
 void	type_hexade_upper(t_struct *flags);
 void	type_pointer(t_struct *flags);
+void	type_percent(t_struct *flags);
 void	type_char(t_struct *flags);
 void	flag_zero_integer(t_struct *flags);
 void	hexade_zero(t_struct *flags, unsigned int hexade);
@@ -76,7 +77,6 @@ void	print_pointer(t_struct *flags, unsigned int pointer);
 void	flag_minus_integer(t_struct *flags, int intger);
 void	flag_minus_string(t_struct *flags);
 void	flag_minus_pointer(t_struct *flags, int pointer);
-void	ft_putchar_hexade(char c);
 char	*itoa(int n);
 char	*itoa_unsigned(unsigned int n);
 

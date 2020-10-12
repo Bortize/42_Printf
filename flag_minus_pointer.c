@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flag_minus_pointer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 14:52:49 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/05 11:45:46 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/09 16:15:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	flag_minus_pointer(t_struct *flags, int pointer)
 	}
 	else
 	{
-		if (flags->flag_precision == 1 && flags->precision == 0 && pointer == 0)
+		if (flags->flag_precision && flags->precision == 0 && pointer == 0)
 			flags->count = 0;
 		while (flags->j < (flags->width - flags->count - 2))
 		{

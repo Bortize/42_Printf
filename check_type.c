@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 08:53:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/08 14:40:13 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/09 16:58:46 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ void	check_type(const char *format, t_struct *flags)
 		type_hexade_upper(flags);
 	if (format[flags->i] == 'p')
 		type_pointer(flags);
+	if (format[flags->i] == '%')
+		type_percent(flags);
 }

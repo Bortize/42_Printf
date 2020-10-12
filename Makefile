@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/10/08 19:12:43 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/12 19:30:19 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS		=	ft_printf.c \
 				type_hexade_low.c \
 				type_hexade_upper.c \
 				type_pointer.c \
+				type_percent.c \
 				flag_zero_integer.c \
 				flag_precision_integer.c \
 				flag_precision_string.c \
@@ -53,7 +54,6 @@ SRCS		=	ft_printf.c \
 				flag_minus_string.c \
 				flag_minus_pointer.c \
 				flag_minus_pointer.c \
-				ft_putchar_hexade.c \
 				hexade_zero.c \
 				itoa.c \
 				itoa_unsigned.c \
