@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 12:24:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/08 21:43:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/15 17:39:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	flag_zero_integer(t_struct *flags)
 	{
 		while (flags->j < (flags->width - flags->count))
 		{
-			write(1, " ", 1);
+			ft_putchar('0');
 			flags->len++;
 			flags->j++;
 		}
