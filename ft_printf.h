@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/15 14:05:43 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/15 19:16:55 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void	flag_minus_integer(t_struct *flags, int intger);
 void	flag_minus_string(t_struct *flags);
 void	flag_minus_pointer(t_struct *flags, int pointer);
 void	flag_minus_percent(t_struct *flags);
-char	*itoa(int n);
 char	*itoa_unsigned(unsigned int n);
 
 #endif
