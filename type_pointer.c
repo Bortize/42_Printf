@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 13:58:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/15 19:26:50 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/15 20:15:45 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	type_pointer(t_struct *flags)
 {
-	unsigned int pointer;
+	unsigned long pointer;
 
 	pointer= 0;
 	flags->count = 0;
-	pointer = va_arg(flags->ap, unsigned int);
+	pointer = va_arg(flags->ap, unsigned long);
 	hexade_countdigits(flags, pointer);
 	if (flags->flag_width)
 		flag_width_pointer(flags, pointer);
