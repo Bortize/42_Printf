@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_pointer.c                                    :+:      :+:    :+:   */
+/*   flag_zero_percent.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/05 01:12:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/14 12:52:35 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/15 13:29:59 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/15 13:45:12 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
+#include	"ft_printf.h"
 
-void	print_pointer(t_struct *flags, unsigned int pointer)
+void	flag_zero_percent(t_struct *flags)
 {
-	if (pointer != 0)
+	flags->j = 0;
+	if (!(flags->flag_minus))
 	{
-		print_pointer(flags, pointer / 16);
-		if (pointer % 16 >= 10)
+		if ((flags->flag_width) && (flags->width > flags->count))
 		{
-			ft_putchar('a' + (pointer % 16 % 10));
-			flags->len++;
-		}
-		else
-		{
-			ft_putchar('0' + pointer % 16);
-			flags->len++;
+			while (flags->j < (flags->width - flags->count))
+			{
+				ft_putchar('0');
+				flags->len++;
+				flags->j++;
+			}
 		}
 	}
 }

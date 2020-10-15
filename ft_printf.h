@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/12 19:30:21 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/15 14:05:43 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct	s_struct
 	int	flag_precision;
 	int	count;
 	int	flag_integer_negative;
-	
+
 }				t_struct;
 
 int		ft_printf(const char *format, ...);
@@ -63,6 +63,7 @@ void	type_percent(t_struct *flags);
 void	type_char(t_struct *flags);
 void	flag_zero_integer(t_struct *flags);
 void	hexade_zero(t_struct *flags, unsigned int hexade);
+void	flag_zero_percent(t_struct *flags);
 void	flag_precision_integer(t_struct *flags);
 void	flag_precision_string(t_struct *flags, char *str);
 int		print_negative(t_struct *flags, long int integet);
@@ -77,6 +78,7 @@ void	print_pointer(t_struct *flags, unsigned int pointer);
 void	flag_minus_integer(t_struct *flags, int intger);
 void	flag_minus_string(t_struct *flags);
 void	flag_minus_pointer(t_struct *flags, int pointer);
+void	flag_minus_percent(t_struct *flags);
 char	*itoa(int n);
 char	*itoa_unsigned(unsigned int n);
 
