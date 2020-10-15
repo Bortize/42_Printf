@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 14:08:39 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/12 19:31:24 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/15 17:45:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_hexade_upper(t_struct *flags, unsigned int hexade)
 {
 	if (hexade != 0)
 	{
-		print_hexade_low(flags, hexade / 16);
+		print_hexade_upper(flags, hexade / 16);
 		if (hexade % 16 >= 10)
 		{
 			ft_putchar('A' + (hexade % 16 % 10));
