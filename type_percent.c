@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_percent.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 17:00:59 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/15 13:47:30 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/15 16:48:51 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	type_percent(t_struct *flags)
 		flag_precision_integer(flags);
 	ft_putchar('%');
 	flags->len++;
-	flags->j++;
+	flags->count++;
 	if (flags->flag_minus)
 		flag_minus_percent(flags);
 }

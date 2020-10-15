@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flag_minus_percent.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 13:48:45 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/15 14:04:39 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/15 16:29:49 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	flag_minus_percent(t_struct *flags)
 	if (flags->precision && (flags->precision > flags->count))
 	{
 		if (flags->flag_integer_negative)
-			flag_precision += 1;
-		while (flasg->j < (flags->width - flags->precision))
+			flags->precision += 1;
+		while (flags->j < (flags->width - flags->precision))
 		{
-			ft_putchar(" ");
+			ft_putchar(' ');
 			flags->len++;
 			flags->j++;
 		}
@@ -30,7 +30,7 @@ void	flag_minus_percent(t_struct *flags)
 	{
 		while (flags->j < (flags->width - flags->count))
 		{
-			ft_putchar(" ");
+			ft_putchar(' ');
 			flags->len++;
 			flags->j++;
 		}
