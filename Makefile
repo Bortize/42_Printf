@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/10/15 19:16:45 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/15 19:37:18 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS		=	ft_printf.c \
 				hexade_countdigits.c \
 				flag_width_integer.c \
 				flag_width_string.c \
+				flag_width_pointer.c \
 				type_integer.c \
 				type_unsigned_int.c \
 				type_string.c \
@@ -51,6 +52,7 @@ SRCS		=	ft_printf.c \
 				print_hexade_upper.c \
 				print_hexade_upper.c \
 				print_pointer.c \
+				print_pointer_width.c \
 				flag_minus_integer.c \
 				flag_minus_string.c \
 				flag_minus_pointer.c \

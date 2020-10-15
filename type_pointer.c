@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_pointer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 13:58:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/14 12:41:08 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/15 19:26:50 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	type_pointer(t_struct *flags)
 	pointer = va_arg(flags->ap, unsigned int);
 	hexade_countdigits(flags, pointer);
 	if (flags->flag_width)
-		flag_width_integer(flags, pointer);
+		flag_width_pointer(flags, pointer);
 	write(1, "0x", 2);
 	flags->len = flags->len + 2;
 	if (pointer < 0)
