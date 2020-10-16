@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/15 21:49:25 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/16 13:27:26 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdarg.h>
-
 typedef struct	s_struct
 {
 	va_list ap;
@@ -69,20 +68,20 @@ void	flag_precision_integer(t_struct *flags);
 void	flag_precision_string(t_struct *flags, char *str);
 int		print_negative(t_struct *flags, long int integet);
 void	print_integer_width(t_struct *flags);
-void    print_unsigned(t_struct *flags, unsigned int unsign);
+void	print_unsigned(t_struct *flags, unsigned int unsign);
 void	print_string_width(t_struct *flags);
 void	print_integer(t_struct *flags, int integer);
 void	print_string(t_struct *flags, char *str);
 void	print_hexade_low(t_struct *flags, unsigned int hexade);
 void	print_hexade_upper(t_struct *flags, unsigned int hexade);
 void	print_pointer_width(t_struct *flags);
-void	print_pointer(t_struct *flags, unsigned int pointer);
+void	print_pointer(t_struct *flags, unsigned long pointer);
 void	flag_minus_integer(t_struct *flags, int intger);
 void	flag_minus_string(t_struct *flags);
 void	flag_minus_pointer(t_struct *flags, int pointer);
 void	flag_minus_percent(t_struct *flags);
 char	*itoa_unsigned(unsigned int n);
-void    flag_precision_pointer(t_struct *flags);
+void	flag_precision_pointer(t_struct *flags);
 void	pointer_countdigits(t_struct *flags, unsigned long pointer);
 
 #endif

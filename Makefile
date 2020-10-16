@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+         #
+#    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/10/15 21:47:47 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/16 14:23:31 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ SRCS		=	ft_printf.c \
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -g
+#CFLAGS		= -Wall -Wextra -Werror -g
 
 OBJS		= $(SRCS:.c=.o)
 

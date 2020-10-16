@@ -6,13 +6,13 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 01:12:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/14 12:52:35 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/16 14:29:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include    "ft_printf.h"
 
-void	print_pointer(t_struct *flags, unsigned int pointer)
+void	print_pointer(t_struct *flags, unsigned long pointer)
 {
 	if (pointer != 0)
 	{
