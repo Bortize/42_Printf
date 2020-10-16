@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/15 19:37:01 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/15 21:49:25 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ void	flag_minus_string(t_struct *flags);
 void	flag_minus_pointer(t_struct *flags, int pointer);
 void	flag_minus_percent(t_struct *flags);
 char	*itoa_unsigned(unsigned int n);
+void    flag_precision_pointer(t_struct *flags);
+void	pointer_countdigits(t_struct *flags, unsigned long pointer);
 
 #endif

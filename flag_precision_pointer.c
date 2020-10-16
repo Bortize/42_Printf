@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hexade_countdigits.c                               :+:      :+:    :+:   */
+/*   flag_precision_pointer.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/30 11:41:58 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/15 21:48:31 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/15 21:11:58 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/15 21:59:33 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include    "ft_printf.h"
 
-void	hexade_countdigits(t_struct *flags, unsigned int hexade)
+void    flag_precision_pointer(t_struct *flags)
 {
-	flags->count = 0;
-	while (hexade >= 16)
+    int aux;
+
+	aux = flags->count;
+	flags->j = 0;
+	if (flags->flag_integer_negative)
+		aux -= 1;
+	if (flags->precision > aux)
 	{
-		hexade = hexade / 16;
-		flags->count++;
+		while (flags->j < (flags->precision - aux))
+		{
+			write(1, "0", 1);
+			flags->len++;
+			flags->j++;
+		}
 	}
-	flags->count++;
 }
