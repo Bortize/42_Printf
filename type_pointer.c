@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_pointer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 13:58:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/16 14:54:34 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/18 00:18:59 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,15 @@ void	type_pointer(t_struct *flags)
 	pointer = 0;
 	flags->count = 0;
 	pointer = va_arg(flags->ap, unsigned long);
-
 	pointer_countdigits(flags, pointer);
 	if (flags->flag_width)
 		flag_width_pointer(flags, pointer);
-	if (flags->flag_zero)
-		flag_zero_integer(flags);
 	write(1, "0x", 2);
 	flags->len += 2;
+	if (pointer < 0)
+		pointer = print_negative(flags, pointer);
+	if (flags->flag_zero)
+		flag_zero_integer(flags);
 	if (flags->flag_precision)
 		flag_precision_pointer(flags);
 		if (pointer == 0)

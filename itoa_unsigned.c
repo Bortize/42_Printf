@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 20:26:38 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/16 19:17:39 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/18 00:00:40 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
+#include	"ft_printf.h"
 #include <stdio.h>
 
 static int	get_size(unsigned int nb)
@@ -39,7 +39,8 @@ char		*itoa_unsigned(unsigned int n)
 		nb = (unsigned int)n;
 	size = (unsigned int)get_size(nb);
 	index = 0;
-	if (!(str = (char*)malloc(sizeof(char) * (size + 1 + (nb > 0 ? 1 : 0)))))
+	//if (!(str = (char*)malloc(sizeof(char) * (size + 1 + (nb > 0 ? 1 : 0)))))
+	if (!(str = (char*)malloc(sizeof(char) * (size))))
 		return (NULL);
 	if (n < 0 && (str[index] = '-'))
 		size++;

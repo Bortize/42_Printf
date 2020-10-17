@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_string_width.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 21:56:40 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/07 13:41:53 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/17 23:47:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_string_width(t_struct *flags)
 	int total;
 
 	flags->j = 0;
-	if (flags->count > flags->precision && flags->flag_precision == 1)
+	if (flags->flag_precision && flags->count > flags->precision)
 		total = flags->width - flags->precision;
 	else
 		total = flags->width - flags->count;

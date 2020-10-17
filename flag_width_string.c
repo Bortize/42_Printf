@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 21:36:22 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/08 21:43:07 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/17 23:17:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	flag_width_string(t_struct *flags, char *format)
 			flags->count = 0;
 		flags->aux = flags->precision > flags->count ?
 		flags->precision : flags->count;
-		if ((flags->flag_integer_negative) && (flags->precision > flags->count))
-			flags->aux += 1;
 		if (flags->width > flags->aux)
 			print_string_width(flags);
 		if (flags->width < flags->count)

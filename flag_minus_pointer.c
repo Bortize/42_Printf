@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 14:52:49 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/09 16:15:36 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/18 00:21:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	flag_minus_pointer(t_struct *flags, int pointer)
 {
-	flags->count = 0;
-
+	flags->j = 0;
 	if (flags->flag_precision && (flags->precision > flags->count))
 	{
 		if (flags->flag_integer_negative)
