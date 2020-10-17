@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 14:10:46 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/07 20:51:50 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/16 20:45:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ void	type_unsigned_int(t_struct *flags)
 	int_counter_unsigned(flags, integer);
 	if (flags->flag_width)
 		flag_width_integer(flags, integer);
-	if (integer < 0)
-		integer = print_negative(flags, integer);
+	// ELIMINO LO SIGUIENTE YA QUE NO NECESITO TENER NEGATIVOS EN UNSIGNED INT	
+	//if (integer < 0)
+	//	integer = print_negative(flags, integer);
 	if (flags->flag_zero)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)

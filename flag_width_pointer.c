@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flag_width_pointer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 19:20:53 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/16 14:54:10 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/16 16:23:44 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void    flag_width_pointer(t_struct *flags, int pointer)
                 flags->aux += 1;
             if (flags->width > flags->aux)
                 print_pointer_width(flags);
-			flags->len -= 2;
         }
         else
             while (flags->j < (flags->width - flags->count - 2))
