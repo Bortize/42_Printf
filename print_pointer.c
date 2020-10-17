@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_zero_integer.c                                :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/08 12:24:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/15 17:39:08 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/05 01:12:36 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/16 14:29:57 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include    "ft_printf.h"
 
-void	flag_zero_integer(t_struct *flags)
+void	print_pointer(t_struct *flags, unsigned long pointer)
 {
-	flags->j = 0;
-	if (flags->flag_width && (flags->width > flags->count))
+	if (pointer != 0)
 	{
-		while (flags->j < (flags->width - flags->count))
+		print_pointer(flags, pointer / 16);
+		if (pointer % 16 >= 10)
 		{
-			ft_putchar('0');
+			ft_putchar('a' + (pointer % 16 % 10));
 			flags->len++;
-			flags->j++;
+		}
+		else
+		{
+			ft_putchar('0' + pointer % 16);
+			flags->len++;
 		}
 	}
 }

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_counter.c                                      :+:      :+:    :+:   */
+/*   print_pointer_width.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 09:25:57 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/07 19:00:05 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/15 19:22:22 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/18 00:14:13 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include    "ft_printf.h"
 
-void	int_counter(t_struct *flags, int integer)
+void	print_pointer_width(t_struct *flags)
 {
-	char	*str;
+	int total;
 
-	flags->flag_integer_negative = 0;
-	if (integer < 0)
-		flags->flag_integer_negative = 1;
-	str = ft_itoa(integer);
-	flags->count = ft_strlen(str);
+	flags->j = 0;
+	total = flags->width - flags->aux - 2;
+	while (flags->j < total)
+	{
+		write(1, " ", 1);
+		flags->len++;
+		flags->j++;
+	}
 }

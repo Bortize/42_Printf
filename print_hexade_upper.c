@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_counter.c                                      :+:      :+:    :+:   */
+/*   print_hexade_upper.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 09:25:57 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/07 19:00:05 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/01 14:08:39 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/15 17:45:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	int_counter(t_struct *flags, int integer)
+void	print_hexade_upper(t_struct *flags, unsigned int hexade)
 {
-	char	*str;
-
-	flags->flag_integer_negative = 0;
-	if (integer < 0)
-		flags->flag_integer_negative = 1;
-	str = ft_itoa(integer);
-	flags->count = ft_strlen(str);
+	if (hexade != 0)
+	{
+		print_hexade_upper(flags, hexade / 16);
+		if (hexade % 16 >= 10)
+		{
+			ft_putchar('A' + (hexade % 16 % 10));
+			flags->len++;
+		}
+		else
+		{
+			ft_putchar('0' + hexade % 16);
+			flags->len++;
+		}
+	}
 }

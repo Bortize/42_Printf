@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_integer.c                                     :+:      :+:    :+:   */
+/*   type_hexade_upper.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 09:14:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/08 13:18:07 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/02 22:14:25 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/05 11:37:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	type_integer(t_struct *flags)
+void	type_hexade_upper(t_struct *flags)
 {
-	int	integer;
+	unsigned int	hexade;
 
 	flags->count = 0;
-	integer = 0;
-	integer = va_arg(flags->ap, int);
-	int_counter(flags, integer);
-	if (flags->flag_minus && flags->flag_zero && flags->flag_width)
-		flags->flag_zero = 0;
-	if (flags->aux < 0)
-		flags->precision = 0;
+	hexade = 0;
+	hexade = va_arg(flags->ap, unsigned int);
+	hexade_countdigits(flags, hexade);
 	if (flags->flag_width)
-		flag_width_integer(flags, integer);
-	if (integer < 0)
-		integer = print_negative(flags, integer);
+		flag_width_integer(flags, hexade);
+	if (hexade < 0)
+		hexade = print_negative(flags, hexade);
 	if (flags->flag_zero)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)
 		flag_precision_integer(flags);
-	print_integer(flags, integer);
+	if (hexade == 0)
+		hexade_zero(flags, hexade);
+	print_hexade_upper(flags, hexade);
 	if (flags->flag_minus)
-		flag_minus_integer(flags, integer);
+		flag_minus_integer(flags, hexade);
 }
+
+

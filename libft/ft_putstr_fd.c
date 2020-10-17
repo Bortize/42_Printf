@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 01:38:55 by bgomez-r          #+#    #+#             */
-/*   Updated: 2019/11/28 19:00:19 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/05 20:31:18 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,14 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	int	i;
+
+	i = 0;
 	if (!s)
 		return ;
-	write(fd, s, ft_strlen(s));
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }

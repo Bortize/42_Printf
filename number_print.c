@@ -6,13 +6,13 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 23:17:10 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/10 12:43:29 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/05 12:35:32 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	number_print(t_struct *flags, int integer)
+void	print_integer(t_struct *flags, int integer)
 {
 	char *number_str;
 

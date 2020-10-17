@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_counter.c                                      :+:      :+:    :+:   */
+/*   flag_minus_string.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 09:25:57 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/07 19:00:05 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/22 11:52:38 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/08 20:54:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	int_counter(t_struct *flags, int integer)
+void	flag_minus_string(t_struct *flags)
 {
-	char	*str;
-
-	flags->flag_integer_negative = 0;
-	if (integer < 0)
-		flags->flag_integer_negative = 1;
-	str = ft_itoa(integer);
-	flags->count = ft_strlen(str);
+	flags->j = 0;
+	if (flags->flag_precision && flags->precision < flags->count)
+	{
+		while (flags->j < (flags->width - flags->precision))
+		{
+			write(1, " ", 1);
+			flags->len++;
+			flags->j++;
+		}
+	}
+	else
+	{
+		while (flags->j < (flags->width - flags->count))
+		{
+			write(1, " ", 1);
+			flags->len++;
+			flags->j++;
+		}
+	}
 }
+

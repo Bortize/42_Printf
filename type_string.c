@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_integer.c                                     :+:      :+:    :+:   */
+/*   type_string.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 09:14:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/08 13:18:07 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/21 18:21:17 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/10/08 20:44:19 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	type_integer(t_struct *flags)
+void	type_string(t_struct *flags)
 {
-	int	integer;
+	char *str;
 
 	flags->count = 0;
-	integer = 0;
-	integer = va_arg(flags->ap, int);
-	int_counter(flags, integer);
-	if (flags->flag_minus && flags->flag_zero && flags->flag_width)
-		flags->flag_zero = 0;
+	str = va_arg(flags->ap, char *);
+	if (!(str))
+		str = "(null)";
+	flags->count = ft_strlen(str);
 	if (flags->aux < 0)
-		flags->precision = 0;
+		flags->precision = flags->count;
 	if (flags->flag_width)
-		flag_width_integer(flags, integer);
-	if (integer < 0)
-		integer = print_negative(flags, integer);
+		flag_width_string(flags, str);
 	if (flags->flag_zero)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)
-		flag_precision_integer(flags);
-	print_integer(flags, integer);
+		flag_precision_string(flags, str);
+	print_string(flags, str);
 	if (flags->flag_minus)
-		flag_minus_integer(flags, integer);
+		flag_minus_string(flags);
 }

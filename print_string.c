@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_counter.c                                      :+:      :+:    :+:   */
+/*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 09:25:57 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/07 19:00:05 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/21 23:36:54 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/10/08 20:47:50 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include    "ft_printf.h"
 
-void	int_counter(t_struct *flags, int integer)
+void	print_string(t_struct *flags, char *str)
 {
-	char	*str;
-
-	flags->flag_integer_negative = 0;
-	if (integer < 0)
-		flags->flag_integer_negative = 1;
-	str = ft_itoa(integer);
-	flags->count = ft_strlen(str);
+	if (flags->flag_precision == 0)
+	{
+		flags->j = 0;
+		{
+			while (str[flags->j] != '\0')
+			{
+				flags->len += write(1, &str[flags->j], 1);
+				flags->j++;
+			}
+		}
+	}
 }

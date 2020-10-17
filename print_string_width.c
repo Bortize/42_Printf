@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_integer.c                                    :+:      :+:    :+:   */
+/*   print_string_width.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 10:42:04 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/05 18:02:39 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/21 21:56:40 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/10/17 23:47:53 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include	"ft_printf.h"
 
-void	print_integer(t_struct *flags, int integer)
+void	print_string_width(t_struct *flags)
 {
-	char *number;
+	int total;
 
 	flags->j = 0;
-	if (flags->flag_precision == 1 && flags->precision == 0 && integer == 0)
+	if (flags->flag_precision && flags->count > flags->precision)
+		total = flags->width - flags->precision;
+	else
+		total = flags->width - flags->count;
+	if (flags->width < total)
 		flags->j = 0;
 	else
-	{
-		number = ft_itoa(integer);
-		while (number[flags->j] != '\0')
+		while (flags->j < total)
 		{
-			flags->len += write(1, &number[flags->j], 1);
+			write(1, " ", 1);
+			flags->len++;
 			flags->j++;
 		}
-		free(number);
-		number = NULL;
+	if (flags->count == 0)
+	{
+		while (flags->j < flags->width)
+		{
+			write(1, " ", 1);
+			flags->len++;
+			flags->j++;
+		}
 	}
 }

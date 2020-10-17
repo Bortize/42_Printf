@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_counter.c                                      :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 09:25:57 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/07 19:00:05 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/21 22:02:38 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/10/09 12:51:56 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "libft.h"
 
-void	int_counter(t_struct *flags, int integer)
+void	ft_putchar(char c)
 {
-	char	*str;
-
-	flags->flag_integer_negative = 0;
-	if (integer < 0)
-		flags->flag_integer_negative = 1;
-	str = ft_itoa(integer);
-	flags->count = ft_strlen(str);
+	write(1, &c, 1);
 }

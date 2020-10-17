@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_integer.c                                    :+:      :+:    :+:   */
+/*   flag_precision_string.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 10:42:04 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/05 18:02:39 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/21 22:58:33 by borjagrd          #+#    #+#             */
+/*   Updated: 2020/10/08 20:46:48 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include	"ft_printf.h"
 
-void	print_integer(t_struct *flags, int integer)
+void	flag_precision_string(t_struct *flags, char *str)
 {
-	char *number;
+	int aux;
 
 	flags->j = 0;
-	if (flags->flag_precision == 1 && flags->precision == 0 && integer == 0)
+	aux = flags->precision < flags->count ? flags->precision : flags->count;
+	if ((flags->flag_precision == 1) && (flags->precision == 0) && (str == 0))
+		flags->j = 0;
+	if ((flags->flag_precision == 1) && (flags->precision == 0))
 		flags->j = 0;
 	else
 	{
-		number = ft_itoa(integer);
-		while (number[flags->j] != '\0')
+		while (flags->j < aux)
 		{
-			flags->len += write(1, &number[flags->j], 1);
+			write(1, &str[flags->j], 1);
+			flags->len++;
 			flags->j++;
 		}
-		free(number);
-		number = NULL;
 	}
 }
+

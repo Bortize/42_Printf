@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_integer.c                                     :+:      :+:    :+:   */
+/*   type_pointer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 09:14:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/08 13:18:07 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/03 13:58:19 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/18 00:18:59 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"ft_printf.h"
 
-void	type_integer(t_struct *flags)
+void	type_pointer(t_struct *flags)
 {
-	int	integer;
+	unsigned long pointer;
 
+	pointer = 0;
 	flags->count = 0;
-	integer = 0;
-	integer = va_arg(flags->ap, int);
-	int_counter(flags, integer);
-	if (flags->flag_minus && flags->flag_zero && flags->flag_width)
-		flags->flag_zero = 0;
-	if (flags->aux < 0)
-		flags->precision = 0;
+	pointer = va_arg(flags->ap, unsigned long);
+	pointer_countdigits(flags, pointer);
 	if (flags->flag_width)
-		flag_width_integer(flags, integer);
-	if (integer < 0)
-		integer = print_negative(flags, integer);
+		flag_width_pointer(flags, pointer);
+	write(1, "0x", 2);
+	flags->len += 2;
+	if (pointer < 0)
+		pointer = print_negative(flags, pointer);
 	if (flags->flag_zero)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)
-		flag_precision_integer(flags);
-	print_integer(flags, integer);
+		flag_precision_pointer(flags);
+		if (pointer == 0)
+			hexade_zero(flags, pointer);
+	print_pointer(flags, pointer);
 	if (flags->flag_minus)
-		flag_minus_integer(flags, integer);
+		flag_minus_pointer(flags, pointer);
 }
