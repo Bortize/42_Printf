@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 13:58:19 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/18 00:18:59 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 01:12:19 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	type_pointer(t_struct *flags)
 {
@@ -30,8 +30,8 @@ void	type_pointer(t_struct *flags)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)
 		flag_precision_pointer(flags);
-		if (pointer == 0)
-			hexade_zero(flags, pointer);
+	if (pointer == 0)
+		hexade_zero(flags, pointer);
 	print_pointer(flags, pointer);
 	if (flags->flag_minus)
 		flag_minus_pointer(flags, pointer);

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   hexade_zero.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 12:42:53 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/09 14:02:21 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 01:06:40 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	hexade_zero(t_struct *flags, unsigned int hexade)
 {

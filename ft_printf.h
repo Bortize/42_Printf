@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/16 18:16:10 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 01:14:48 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,23 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdarg.h>
+
 typedef struct	s_struct
 {
 	va_list ap;
-	int	i;
-	int j;
-	int	len;
-	int	flag_minus;
-	int	flag_zero;
-	int	aux;
-	int	flag_aux;
-	int	width;
-	int	flag_width;
-	int	precision;
-	int	flag_precision;
-	int	count;
-	int	flag_integer_negative;
-
+	int		i;
+	int		j;
+	int		len;
+	int		flag_minus;
+	int		flag_zero;
+	int		aux;
+	int		flag_aux;
+	int		width;
+	int		flag_width;
+	int		precision;
+	int		flag_precision;
+	int		count;
+	int		flag_integer_negative;
 }				t_struct;
 
 int		ft_printf(const char *format, ...);
@@ -51,7 +51,7 @@ void	number_print(t_struct *flags, int integer);
 void	hexade_countdigits(t_struct *flags, unsigned int hexade);
 void	flag_width_integer(t_struct *flags, long int integer);
 void	flag_width_string(t_struct *flags, char *string);
-void    flag_width_pointer(t_struct *flags, int pointer);
+void	flag_width_pointer(t_struct *flags, int pointer);
 void	type_integer(t_struct *flags);
 void	type_unsigned_int(t_struct *flags);
 void	type_string(t_struct *flags);

@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 12:26:30 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/08 14:06:33 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 01:08:16 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	width_flag(const char *format, t_struct *flags)
 {

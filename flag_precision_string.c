@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 22:58:33 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/08 20:46:48 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 01:07:48 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	flag_precision_string(t_struct *flags, char *str)
 {
@@ -32,4 +32,3 @@ void	flag_precision_string(t_struct *flags, char *str)
 		}
 	}
 }
-

@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 13:48:45 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/15 16:29:49 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 01:01:23 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	flag_minus_percent(t_struct *flags)
 {
@@ -36,4 +36,3 @@ void	flag_minus_percent(t_struct *flags)
 		}
 	}
 }
-

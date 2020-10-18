@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   type_hexade_upper.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 22:14:25 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/05 11:37:11 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 01:08:36 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	type_hexade_upper(t_struct *flags)
 {

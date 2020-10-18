@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 14:52:49 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/18 00:21:36 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 00:51:16 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
+#include "ft_printf.h"
 
 void	flag_minus_pointer(t_struct *flags, int pointer)
 {
@@ -35,6 +35,6 @@ void	flag_minus_pointer(t_struct *flags, int pointer)
 			write(1, " ", 1);
 			flags->len++;
 			flags->j++;
-	 	}
+		}
 	}
 }

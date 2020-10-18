@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 08:50:52 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/07 20:23:34 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 00:54:08 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	flag_precision_integer(t_struct *flags)
 	{
 		while (flags->j < (flags->precision - num_len))
 		{
-			write (1, "0", 1);
+			write(1, "0", 1);
 			flags->len++;
 			flags->j++;
 		}

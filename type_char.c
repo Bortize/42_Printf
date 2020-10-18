@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   type_char.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borjagrd <borjagrd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 12:37:47 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/24 20:32:44 by borjagrd         ###   ########.fr       */
+/*   Updated: 2020/10/19 00:54:22 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	type_char(t_struct *flags)
 {

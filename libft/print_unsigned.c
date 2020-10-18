@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_counter.c                                      :+:      :+:    :+:   */
+/*   print_unsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 09:25:57 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/19 00:58:16 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/09/28 00:36:47 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/19 01:08:04 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	int_counter(t_struct *flags, int integer)
+void	print_unsigned(t_struct *flags, unsigned int unsign)
 {
-	char	*str;
+	char	*format;
 
-	flags->flag_integer_negative = 0;
-	if (integer < 0)
-		flags->flag_integer_negative = 1;
-	str = ft_itoa(integer);
-	flags->count = ft_strlen(str);
+	flags->j = 0;
+	if (flags->flag_precision == 1 && flags->precision == 0 && unsign == 0)
+		flags->j = 0;
+	else
+	{
+		format = itoa_unsigned(unsign);
+		while (format[flags->j] != '\0')
+		{
+			write(1, &format[flags->j], 1);
+			flags->len++;
+			flags->j++;
+		}
+		free(format);
+		format = NULL;
+	}
 }

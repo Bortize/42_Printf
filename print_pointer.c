@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 01:12:36 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/16 14:29:57 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 00:59:09 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
+#include "ft_printf.h"
 
 void	print_pointer(t_struct *flags, unsigned long pointer)
 {

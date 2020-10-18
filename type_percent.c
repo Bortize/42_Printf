@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 17:00:59 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/15 17:35:43 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 00:58:25 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	type_percent(t_struct *flags)
 {

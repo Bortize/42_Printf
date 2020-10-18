@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 21:46:13 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/15 21:47:04 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 00:55:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
+#include "ft_printf.h"
 
 void	pointer_countdigits(t_struct *flags, unsigned long pointer)
 {

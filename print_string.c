@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 23:36:54 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/08 20:47:50 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 01:04:01 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
+#include "ft_printf.h"
 
 void	print_string(t_struct *flags, char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:34:12 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/17 16:19:44 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 00:55:14 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	ft_printf(const char *format, ...)
 {
 	t_struct	*flags;
-	
+
 	if (!(flags = (t_struct *)malloc(sizeof(t_struct))))
 		return (0);
 	initialize_flags(flags);

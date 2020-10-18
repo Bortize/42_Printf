@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 14:10:46 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/18 00:07:06 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 01:00:15 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
+#include "ft_printf.h"
 
 void	type_unsigned_int(t_struct *flags)
 {
@@ -22,7 +22,6 @@ void	type_unsigned_int(t_struct *flags)
 	int_counter_unsigned(flags, integer);
 	if (flags->flag_width)
 		flag_width_integer(flags, integer);
-	// ELIMINO LO SIGUIENTE YA QUE NO NECESITO TENER NEGATIVOS EN UNSIGNED INT	
 	if (integer < 0)
 		integer = print_negative(flags, integer);
 	if (flags->flag_zero)

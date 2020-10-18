@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 23:39:07 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/07 20:35:51 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 01:13:32 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "ft_printf.h"
+#include "ft_printf.h"
 
 void	flag_minus_integer(t_struct *flags, int integer)
 {
@@ -21,7 +21,7 @@ void	flag_minus_integer(t_struct *flags, int integer)
 			flags->precision += 1;
 		while (flags->j < (flags->width - flags->precision))
 		{
-			write (1, " ", 1);
+			write(1, " ", 1);
 			flags->len++;
 			flags->j++;
 		}
@@ -32,7 +32,7 @@ void	flag_minus_integer(t_struct *flags, int integer)
 			flags->count = 0;
 		while (flags->j < (flags->width - flags->count))
 		{
-			write (1, " ", 1);
+			write(1, " ", 1);
 			flags->len++;
 			flags->j++;
 		}

@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 08:53:06 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/09 16:58:46 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 01:01:10 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	check_type(const char *format, t_struct *flags)
 {

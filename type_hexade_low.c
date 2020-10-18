@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   type_hexade_low.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:36:34 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/03 12:42:03 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 00:51:43 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	type_hexade_low(t_struct *flags)
 {
