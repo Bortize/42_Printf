@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_hexade_upper.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 22:14:25 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/19 01:08:36 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 12:28:06 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,3 @@ void	type_hexade_upper(t_struct *flags)
 	if (flags->flag_minus)
 		flag_minus_integer(flags, hexade);
 }
-
-

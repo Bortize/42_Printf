@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 16:27:10 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/17 18:58:14 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 10:57:37 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,8 @@ int main()
 	ft_printf("Esto es una prueba %.3i \n\n\n", 7);
 
 	ft_printf("Esto es una prueba %-9i \n", number);
+
+	ft_printf("Test %2i %6.4i \n", 102, 42);
+
 return 0;
 }
