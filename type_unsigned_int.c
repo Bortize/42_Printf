@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_unsigned_int.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 14:10:46 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/19 12:24:03 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 22:13:26 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,6 @@ void	int_counter_unsigned(t_struct *flags, unsigned int integer)
 	flags->count = ft_strlen(str);
 	if (integer < 0)
 		flags->flag_integer_negative = 1;
+	free(str);
+	str = NULL;
 }
