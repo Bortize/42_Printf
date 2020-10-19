@@ -6,19 +6,19 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 09:14:02 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/09/23 08:57:14 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 11:35:48 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	type_integer(t_struct *flags)
 {
 	int	integer;
 
+	flags->count = 0;
 	integer = 0;
 	integer = va_arg(flags->ap, int);
-	flags->count = 0;
 	int_counter(flags, integer);
 	if (flags->flag_minus && flags->flag_zero && flags->flag_width)
 		flags->flag_zero = 0;
@@ -32,5 +32,7 @@ void	type_integer(t_struct *flags)
 		flag_zero_integer(flags);
 	if (flags->flag_precision)
 		flag_precision_integer(flags);
-	number_print(flags, integer);
+	print_integer(flags, integer);
+	if (flags->flag_minus)
+		flag_minus_integer(flags, integer);
 }

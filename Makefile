@@ -6,11 +6,11 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/10/03 13:21:04 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/19 12:22:18 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.DELETE_ON_ERROR:# Borra el target en caso de que falle la creacion del target por cualquier motivo
+.DELETE_ON_ERROR:
 
 NAME		=	libftprintf.a
 
@@ -19,40 +19,57 @@ LIBFT		=	libft.a
 SRCS		=	ft_printf.c \
 				initialize_flags.c \
 				check_flags.c \
-				flags_trigger.c \
-				minus_zero_flag.c \
-				width_flag.c \
-				flag_width_integer.c \
-				print_integer_width.c \
-				print_negative.c \
-				flag_zero_integer.c \
-				precision_flag.c \
 				check_type.c \
+				minus_zero_flag.c \
+				flag_zero_percent.c \
+				width_flag.c \
+				precision_flag.c \
+				flags_trigger.c \
 				int_counter.c \
-				type_integer.c \
-				flag_precision_integer.c \
 				number_print.c \
-				type_string.c \
+				hexade_countdigits.c \
+				flag_width_integer.c \
 				flag_width_string.c \
-				print_string_width.c \
-				print_string.c \
-				flag_minus_string.c \
+				flag_width_pointer.c \
+				type_integer.c \
+				type_unsigned_int.c \
+				type_string.c \
 				type_char.c \
 				type_hexade_low.c \
 				type_hexade_upper.c \
+				type_pointer.c \
+				type_percent.c \
+				flag_zero_integer.c \
+				flag_precision_integer.c \
+				flag_precision_string.c \
+				print_integer_width.c \
+				print_negative.c \
+				print_string_width.c \
+				print_integer.c \
+				print_unsigned.c \
+				print_string.c \
 				print_hexade_low.c \
 				print_hexade_upper.c \
 				print_hexade_upper.c \
-				hexade_countdigits.c \
-				ft_putchar_hexade.c \
+				print_pointer.c \
+				print_pointer_width.c \
+				flag_minus_integer.c \
+				flag_minus_string.c \
+				flag_minus_pointer.c \
+				flag_minus_pointer.c \
+				flag_minus_percent.c \
+				hexade_zero.c \
+				itoa_unsigned.c \
+				flag_precision_pointer.c \
+				pointer_countdigits.c \
 				main.c
-#Compilador
+
 CC			= gcc
-#Indica los argumentos que se van a pasar al compilador
+
 CFLAGS		= -Wall -Wextra -Werror -g
-#Variable que contiene todos los ficheros .o evitando que tenga que listarlos todo el tiempo. Ademas en la misma variable los pasa de .c a .o
+
 OBJS		= $(SRCS:.c=.o)
-# indica una lista separada por comas de directorios donde buscar los archivos de cabecera
+
 INCLUDE		= ./libft
 
 AR			= ar rcs
@@ -65,17 +82,16 @@ RM			= rm -rf
 all:		$(NAME)
 
 $(NAME):	$(OBJS) $(INCLUDE)
-				@echo "\n\n\n		FASE DE COMPILADO DEL PROGRAMA 'libft.a' \n"
-				@$(CC) $(CFLAGS) -c $(SRCS)
-				@make -C $(INCLUDE)
-				@cp libft/libft.a ./
-				@mv libft.a $(NAME)
-				@echo "\n\n\n		GENERANDO LIBRERIA 'libftprintf.a' \n"
+				echo "\n\n\n		FASE DE COMPILADO DEL PROGRAMA 'libft.a' \n"
+				$(CC) $(CFLAGS) -c $(SRCS)
+				make -C $(INCLUDE)
+				cp libft/libft.a ./
+				mv libft.a $(NAME)
+				echo "\n\n\n		GENERANDO LIBRERIA 'libftprintf.a' \n"
 				$(AR) $(NAME) $(OBJS)
-				@ranlib $(NAME)
-				@echo "\n		INDEX libftprintf.a GENERADO CON ÉXITO\n\n\n"
-				#Esta linea produce el archivo de salida 'a.out' para poder ver el main
-				@$(CC) -g -L ./ libftprintf.a main.c
+				ranlib $(NAME)
+				echo "\n		INDEX libftprintf.a GENERADO CON ÉXITO\n\n\n"
+				$(CC) -g -L ./ libftprintf.a main.c
 
 clean:
 			$(RM) $(OBJS)

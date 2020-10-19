@@ -6,11 +6,14 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:34:12 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/09/10 12:12:55 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 12:21:15 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 int	ft_printf(const char *format, ...)
 {

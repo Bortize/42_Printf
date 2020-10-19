@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_minus_zero.c                                  :+:      :+:    :+:   */
+/*   flag_minus_percent.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/22 12:14:49 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/22 12:33:44 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/15 13:48:45 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/19 11:36:33 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	flag_minus_zero(const char *format, t_struct *flags)
+void	flag_minus_percent(t_struct *flags)
 {
-	flags->flag_minus = 0;
-	flags->flag_zero = 0;
-	while (format[flags->i] == '0' || format[flags->i] == '-')
+	flags->j = 0;
+	if (flags->precision && (flags->precision > flags->count))
 	{
-		if (format[flags->i] == '-')
-			flags->flag_minus = 1;
-		if (format[flags->i] == '0')
-			flags->flag_zero = 1;
-		if (flags->flag_minus = 1)
-			flags->flag_zero = 0;
+		if (flags->flag_integer_negative)
+			flags->precision += 1;
+		while (flags->j < (flags->width - flags->precision))
+		{
+			ft_putchar(' ');
+			flags->len++;
+			flags->j++;
+		}
 	}
-	flags->i++;
+	else
+	{
+		while (flags->j < (flags->width - flags->count))
+		{
+			ft_putchar(' ');
+			flags->len++;
+			flags->j++;
+		}
+	}
 }

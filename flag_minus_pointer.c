@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_zero_integer.c                                :+:      :+:    :+:   */
+/*   flag_minus_pointer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/08 12:24:44 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/19 12:24:19 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/04 14:52:49 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/19 11:36:41 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	flag_zero_integer(t_struct *flags)
+void	flag_minus_pointer(t_struct *flags, int pointer)
 {
 	flags->j = 0;
-	if (flags->flag_width && (flags->width > flags->count))
+	if (flags->flag_precision && (flags->precision > flags->count))
 	{
-		while (flags->j < (flags->width - flags->count))
+		if (flags->flag_integer_negative)
+			flags->precision = +1;
+		while (flags->j < (flags->width - flags->precision))
 		{
-			ft_putchar('0');
+			write(1, " ", 1);
+			flags->len++;
+			flags->j++;
+		}
+	}
+	else
+	{
+		if (flags->flag_precision && flags->precision == 0 && pointer == 0)
+			flags->count = 0;
+		while (flags->j < (flags->width - flags->count - 2))
+		{
+			write(1, " ", 1);
 			flags->len++;
 			flags->j++;
 		}

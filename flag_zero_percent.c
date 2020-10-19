@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_flags.c                                      :+:      :+:    :+:   */
+/*   flag_zero_percent.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/22 10:16:56 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/07/30 10:54:48 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/15 13:29:59 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/19 11:40:22 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	start_flags(t_struct *flags)
+void	flag_zero_percent(t_struct *flags)
 {
-	flags->i = 0;
-	flags->len = 0;
-	flags->flag_minus = 0;
-	flags->flag_zero = 0;
-	flags->aux = 0;
-	flags->flag_aux = 0;
-	flags->flag_width = 0;
-	flags->flag_ghostplus = 0;
+	flags->j = 0;
+	if (!(flags->flag_minus))
+	{
+		if ((flags->flag_width) && (flags->width > flags->count))
+		{
+			while (flags->j < (flags->width - flags->count - 1))
+			{
+				ft_putchar('0');
+				flags->len++;
+				flags->j++;
+			}
+		}
+	}
 }

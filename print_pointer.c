@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_hexade.c                                :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/03 13:19:59 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/03 13:20:42 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/05 01:12:36 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/19 12:23:05 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
-void	ft_putchar_hexade(char c)
+void	print_pointer(t_struct *flags, unsigned long pointer)
 {
-	write(1, &c, 1);
+	if (pointer != 0)
+	{
+		print_pointer(flags, pointer / 16);
+		if (pointer % 16 >= 10)
+		{
+			ft_putchar('a' + (pointer % 16 % 10));
+			flags->len++;
+		}
+		else
+		{
+			ft_putchar('0' + pointer % 16);
+			flags->len++;
+		}
+	}
 }

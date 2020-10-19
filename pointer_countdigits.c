@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   pointer_countdigits.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 01:38:55 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/19 12:25:08 by bgomez-r         ###   ########.fr       */
+/*   Created: 2020/10/15 21:46:13 by bgomez-r          #+#    #+#             */
+/*   Updated: 2020/10/19 12:22:35 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	pointer_countdigits(t_struct *flags, unsigned long pointer)
 {
-	int	i;
-
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i] != '\0')
+	flags->count = 0;
+	while (pointer >= 16)
 	{
-		ft_putchar_fd(s[i], fd);
-		i++;
+		pointer = pointer / 16;
+		flags->count++;
 	}
+	flags->count++;
 }

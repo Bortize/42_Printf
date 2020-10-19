@@ -6,11 +6,11 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 22:14:25 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/03 12:42:45 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 12:28:06 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"ft_printf.h"
+#include "ft_printf.h"
 
 void	type_hexade_upper(t_struct *flags)
 {
@@ -19,7 +19,7 @@ void	type_hexade_upper(t_struct *flags)
 	flags->count = 0;
 	hexade = 0;
 	hexade = va_arg(flags->ap, unsigned int);
-	hexade_countdigits(flags, hexade);//la finalidad es recoger flags->count
+	hexade_countdigits(flags, hexade);
 	if (flags->flag_width)
 		flag_width_integer(flags, hexade);
 	if (hexade < 0)
@@ -34,5 +34,3 @@ void	type_hexade_upper(t_struct *flags)
 	if (flags->flag_minus)
 		flag_minus_integer(flags, hexade);
 }
-
-

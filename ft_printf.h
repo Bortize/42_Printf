@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/03 13:21:26 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 12:43:01 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,56 +21,67 @@
 
 typedef struct	s_struct
 {
-	va_list ap;
-	int	i;
-	int j;
-	int	len;
-	int	flag_minus;
-	int	flag_zero;
-	int	aux;
-	int	flag_aux;
-	int	width;
-	int	flag_width;
-	int	precision;
-	int	flag_precision;
-	int	count;
-	int	flag_integer_negative;
+	va_list		ap;
+	int			i;
+	int			j;
+	int			len;
+	int			flag_minus;
+	int			flag_zero;
+	int			aux;
+	int			flag_aux;
+	int			width;
+	int			flag_width;
+	int			precision;
+	int			flag_precision;
+	int			count;
+	int			flag_integer_negative;
 }				t_struct;
 
-int		ft_printf(const char *format, ...);
-void	initialize_flags(t_struct *flags);
-void	check_flags(const char *format, t_struct *flags);
-void	flags_trigger(const char *format, t_struct *flags);
-void	flag_width_integer(t_struct *flags, long int integer);
-int		print_negative(t_struct *flags, long int integet);
-void	flag_zero_integer(t_struct *flags);
-void	check_type(const char *format, t_struct *flags);
-void	minus_zero_flag(const char *format, t_struct *flags);
-void	width_flag(const char *format, t_struct	*flags);
-void	precision_flag(const char *format, t_struct *flags);
-void	flag_width_integer(t_struct *flags, long int integer);
-void	print_integer_width(t_struct *flags);
-void	type_integer(t_struct *flags);
-void	int_counter(t_struct *flags, int integer);
-void	flag_precision_integer(t_struct *flags);
-void	number_print(t_struct *flags, int integer);
-void	flag_minus_integer(t_struct *flags, int intger);
-void	type_string(t_struct *flags);
-void	flag_width_string(t_struct *flags, char *string);
-void	print_width_string(t_struct *flags);
-void	print_string(t_struct *flags, char *str);
-void	flag_minus_string(t_struct *flags);
-void	type_string(t_struct *flags);
-void	flag_precision_string(t_struct *flags, char *str);
-void	print_string_width(t_struct *flags);
-void	type_char(t_struct *flags);
-void	type_hexa_low(t_struct *flags);
-void	hexade_countdigits(t_struct *flags, unsigned int hexade);
-void	hexade_zero(t_struct *flasg, unsigned int hexade);
-void	type_hexade_low(t_struct *flags);
-void	type_hexade_upper(t_struct *flags);
-void	print_hexade_low(t_struct *flags, unsigned int hexade);
-void	print_hexade_upper(t_struct *flags, unsigned int hexade);
-void	ft_putchar_hexade(char c);
+int				ft_printf(const char *format, ...);
+void			initialize_flags(t_struct *flags);
+void			check_flags(const char *format, t_struct *flags);
+void			check_type(const char *format, t_struct *flags);
+void			minus_zero_flag(const char *format, t_struct *flags);
+void			width_flag(const char *format, t_struct	*flags);
+void			precision_flag(const char *format, t_struct *flags);
+void			flags_trigger(const char *format, t_struct *flags);
+void			int_counter(t_struct *flags, int integer);
+void			int_counter_unsigned(t_struct *flags, unsigned int integer);
+void			number_print(t_struct *flags, int integer);
+void			hexade_countdigits(t_struct *flags, unsigned int hexade);
+void			flag_width_integer(t_struct *flags, long int integer);
+void			flag_width_string(t_struct *flags, char *string);
+void			flag_width_pointer(t_struct *flags, int pointer);
+void			type_integer(t_struct *flags);
+void			type_unsigned_int(t_struct *flags);
+void			type_string(t_struct *flags);
+void			type_char(t_struct *flags);
+void			type_hexade_low(t_struct *flags);
+void			type_hexade_upper(t_struct *flags);
+void			type_pointer(t_struct *flags);
+void			type_percent(t_struct *flags);
+void			type_char(t_struct *flags);
+void			flag_zero_integer(t_struct *flags);
+void			hexade_zero(t_struct *flags, unsigned int hexade);
+void			flag_zero_percent(t_struct *flags);
+void			flag_precision_integer(t_struct *flags);
+void			flag_precision_string(t_struct *flags, char *str);
+int				print_negative(t_struct *flags, long int integer);
+void			print_integer_width(t_struct *flags);
+void			print_unsigned(t_struct *flags, unsigned int unsign);
+void			print_string_width(t_struct *flags);
+void			print_integer(t_struct *flags, int integer);
+void			print_string(t_struct *flags, char *str);
+void			print_hexade_low(t_struct *flags, unsigned int hexade);
+void			print_hexade_upper(t_struct *flags, unsigned int hexade);
+void			print_pointer_width(t_struct *flags);
+void			print_pointer(t_struct *flags, unsigned long pointer);
+void			flag_minus_integer(t_struct *flags, int intger);
+void			flag_minus_string(t_struct *flags);
+void			flag_minus_pointer(t_struct *flags, int pointer);
+void			flag_minus_percent(t_struct *flags);
+char			*itoa_unsigned(unsigned int n);
+void			flag_precision_pointer(t_struct *flags);
+void			pointer_countdigits(t_struct *flags, unsigned long pointer);
 
 #endif
