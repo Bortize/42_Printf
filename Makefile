@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/10/19 12:22:18 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/20 08:43:21 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ SRCS		=	ft_printf.c \
 				precision_flag.c \
 				flags_trigger.c \
 				int_counter.c \
-				number_print.c \
 				hexade_countdigits.c \
 				flag_width_integer.c \
 				flag_width_string.c \
@@ -66,7 +65,7 @@ SRCS		=	ft_printf.c \
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -g
+#CFLAGS		= -Wall -Wextra -Werror -g
 
 OBJS		= $(SRCS:.c=.o)
 
