@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   int_counter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgomez-r <bgomez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 09:25:57 by bgomez-r          #+#    #+#             */
-/*   Updated: 2020/10/19 12:21:59 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/19 21:45:11 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,6 @@ void	int_counter(t_struct *flags, int integer)
 		flags->flag_integer_negative = 1;
 	str = ft_itoa(integer);
 	flags->count = ft_strlen(str);
+	free(str);
+	str = NULL;
 }

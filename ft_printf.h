@@ -6,7 +6,7 @@
 /*   By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 11:35:04 by borjagrd          #+#    #+#             */
-/*   Updated: 2020/10/19 12:43:01 by bgomez-r         ###   ########.fr       */
+/*   Updated: 2020/10/20 08:33:38 by bgomez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void			precision_flag(const char *format, t_struct *flags);
 void			flags_trigger(const char *format, t_struct *flags);
 void			int_counter(t_struct *flags, int integer);
 void			int_counter_unsigned(t_struct *flags, unsigned int integer);
-void			number_print(t_struct *flags, int integer);
 void			hexade_countdigits(t_struct *flags, unsigned int hexade);
 void			flag_width_integer(t_struct *flags, long int integer);
 void			flag_width_string(t_struct *flags, char *string);
