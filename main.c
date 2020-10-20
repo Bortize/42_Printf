@@ -782,7 +782,7 @@ int main(void) {
 	printf("d: %d %d %d %d %d %d %d %d %d %d %d %d\n", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
 	printf("p: %p %p %p %p %p %p %p %p %p %p %p %p\n", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
 	printf("x: %x %x %x %x %x %x %x %x %x %x %x %x\n", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
-//	ft_printf("%09s", "hi Low");
+	ft_printf("%09s", "hi Low");
 	system("leaks -fullContent  a.out");
 	return 0;
 }
