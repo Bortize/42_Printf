@@ -6,7 +6,7 @@
 #    By: bgomez-r <bgomez-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 11:25:34 by borjagrd          #+#    #+#              #
-#    Updated: 2020/10/20 08:43:21 by bgomez-r         ###   ########.fr        #
+#    Updated: 2020/10/20 10:43:07 by bgomez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,9 +63,9 @@ SRCS		=	ft_printf.c \
 				pointer_countdigits.c \
 				main.c
 
-CC			= gcc
+CC			= @gcc
 
-#CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror -g
 
 OBJS		= $(SRCS:.c=.o)
 
@@ -81,25 +81,25 @@ RM			= rm -rf
 all:		$(NAME)
 
 $(NAME):	$(OBJS) $(INCLUDE)
-				echo "\n\n\n		FASE DE COMPILADO DEL PROGRAMA 'libft.a' \n"
-				$(CC) $(CFLAGS) -c $(SRCS)
-				make -C $(INCLUDE)
-				cp libft/libft.a ./
-				mv libft.a $(NAME)
-				echo "\n\n\n		GENERANDO LIBRERIA 'libftprintf.a' \n"
-				$(AR) $(NAME) $(OBJS)
-				ranlib $(NAME)
-				echo "\n		INDEX libftprintf.a GENERADO CON ÉXITO\n\n\n"
-				$(CC) -g -L ./ libftprintf.a main.c
+				echo "\n\n\n	FASE DE COMPILADO DEL PROGRAMA 'libft.a' \n"
+				@$(CC) $(CFLAGS) -c $(SRCS)
+				@make -C $(INCLUDE)
+				@cp libft/libft.a ./
+				@mv libft.a $(NAME)
+				echo "\n\n\n	GENERANDO LIBRERIA 'libftprintf.a' \n"
+				@$(AR) $(NAME) $(OBJS)
+				@ranlib $(NAME)
+				echo "\nINDEX libftprintf.a	GENERADO CON ÉXITO\n\n\n"
+				@$(CC) -g -L ./ libftprintf.a main.c
 
 clean:
 			$(RM) $(OBJS)
 			make -C $(INCLUDE) clean
 
 fclean:		clean
-				$(RM) $(NAME)
-				make -C $(INCLUDE) fclean
-				$(RM) a.out a.out.dSYM
+				@$(RM) $(NAME)
+				@make -C $(INCLUDE) fclean
+				@$(RM) a.out a.out.dSYM
 
 re:			fclean all
 
