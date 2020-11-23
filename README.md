@@ -1,2 +1,2 @@
 # 42_printf
-My own printf adjusted to the rules of the original printf
+![42_printf](/Users/borjagrd/Desktop/printf/images/printf.jpg)
