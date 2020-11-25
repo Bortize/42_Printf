@@ -1,0 +1,3 @@
+[submodule "42_server"]
+	path = 42_server
+	url = git@github.com:Bortize/42_server.git
