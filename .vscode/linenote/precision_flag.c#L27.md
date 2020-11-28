@@ -1,0 +1,1 @@
+Aquí a diferencia del width, no se comprueba que flags->aux sea negativo porque no tiene ningun significado. Simplemente que sea negativo es que no hay precision y por lo tanto tiene preferencia la longitud de lo que vayamos a imprimir. vease flags->count
