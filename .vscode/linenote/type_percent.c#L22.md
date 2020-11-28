@@ -1,0 +1,1 @@
+Se le resta -1 ya que a la hora de imprimir espacios, si vamos a usar la longitud del ancho como referencia, debo de descontar la posicion que ocupa '%' porque sino va a imprimir 5 espacios y el simbolo % con lo que me quedaria una longitud de 6 y eso no es correcto. debe de quedar una longitud de 5 con 4 espacios y es por eso que anulamos el %

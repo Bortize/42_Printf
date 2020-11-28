@@ -1,4 +1,4 @@
-Cuando se trata de width, flags->aux en este caso si que puede ser negativo, no como en la precision y te explicaré por qué.
+Cuando se trata de width, flags->aux en este caso si que puede ser negativo, NO como en la precision y te explicaré por qué.
 
 Recuerda que width es el ancho de una cadena. Imagina un string de tu nombre "Borja" en un ancho de 9 como en el ejemplo de abajo.
 

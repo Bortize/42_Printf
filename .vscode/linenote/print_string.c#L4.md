@@ -1,0 +1,1 @@
+Hay un caso que no hemos contemplado y es en el suceso de que no tenga precison. Para ello, comprobamos si el flag de la precision es esta apagago y si es asi simplemente iremos imprimiendo caracter a caracter hasta llegar al final del string.
