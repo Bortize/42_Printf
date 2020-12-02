@@ -1,6 +1,6 @@
 ar --> este comando se utiliza para generar librerías estáticas.
 
-rcs -->
+rcs --> son los flags de ar. Deben de servir para controlar si surge algun error a la hora de crear la biblioteca y que nos lo muestre por pantalla.
 
 
 ________________________

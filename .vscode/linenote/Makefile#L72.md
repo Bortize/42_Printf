@@ -1,1 +1,3 @@
-en INCLUDE se suele incluir el PATH de los archivos de cabecerá.
+Path de los ficheros de cabecera.
+
+Suele incluir la ruta donde se alojan los archivos .h del proyecto.
