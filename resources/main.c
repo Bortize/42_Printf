@@ -647,6 +647,7 @@ int main(void) {
 	ft_printf("%s!", "Ceci n'est toujours pas un exercice !");
 	ft_printf("%s!", str);
 	ft_printf("%d", 42);
+	/*
 	ft_printf("Kashim a %d histoires à raconter", 1001);
 	ft_printf("Il fait au moins %d\n", -8000);
 	ft_printf("%d", -0);
@@ -783,6 +784,7 @@ int main(void) {
 	printf("p: %p %p %p %p %p %p %p %p %p %p %p %p\n", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
 	printf("x: %x %x %x %x %x %x %x %x %x %x %x %x\n", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
 	ft_printf("%09s", "hi Low");
+	*/
 	system("leaks -fullContent  a.out");
 	return 0;
 }
